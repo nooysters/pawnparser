@@ -23,7 +23,14 @@ export const components = {
   [IDS.NOBEL_CAPE]: NobelCape
 }
 
-export const Group = () => <g id="shoulders">{components}</g>
+export const Group = () => (
+  <g id="shoulders">
+    {Object.keys(components).map(key => {
+      const Element = components[key]
+      return <Element />
+    })}
+  </g>
+)
 
 uiSchemaService.register(CATEGORY, [
   {

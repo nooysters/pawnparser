@@ -55,7 +55,11 @@ export const components = {
   ).join(',')}
 }
 
-export const Group = () => <g id="${category}">{Object.keys(components).map(key => components[key])}</g>
+export const Group = () => <g id="${category}">{Object.keys(components).map(key => {
+    const Element = components[key]
+    return <Element />
+})
+}</g>
 
 uiSchemaService.register(CATEGORY, [
   ${componentNames.map(component =>
@@ -116,23 +120,37 @@ const JSON2SVGParts = (jsonSVG) => {
   })
 }
 
-const formatGroupComponents = (g) => {
-  if(!Array.isArray(g["g"])) {
-    g["g"] = [g["g"]]
+const createSvgFromJson = (ig) => {
+  let fileName = ig["-id"] || ""
+  const fileNameClean = fileName.replace(/_/g, "")
+
+  if (fileNameClean.length > 0) {
+    const componentName = fileNameClean[0].toUpperCase() + fileNameClean.substring(1)
+    const xml = xotree.writeXML( ig )
+    const cleanSVG = xml.replace(`<?xml version="1.0" encoding="UTF-8" ?>`, "")
+   return { componentName, svg: cleanSVG }
   }
+}
+
+const formatGroupComponents = (g) => {
   const folderName = g["-id"]
   const output = { key: folderName, files: [] }
 
-  g["g"].forEach(ig => {
-    let fileName = ig["-id"] || ""
-    const fileNameClean = fileName.replace(/_/g, "")
+  if(g["g"] === undefined) {
+    files = createSvgFromJson(g)
+    if (!files) return
+    output.files.push(files)
+    return output
+  }
 
-    if (fileNameClean.length > 0) {
-      const componentName = fileNameClean[0].toUpperCase() + fileNameClean.substring(1)
-      const xml = xotree.writeXML( ig )
-      const cleanSVG = xml.replace(`<?xml version="1.0" encoding="UTF-8" ?>`, "")
-      output.files.push({ componentName, svg: cleanSVG })
-    }
+  if(!Array.isArray(g["g"])) {
+    g["g"] = [g["g"]]
+  }
+
+  g["g"].forEach(ig => {
+    files = createSvgFromJson(ig)
+    if(!files) return
+    output.files.push(files)
   })
 
   return output
@@ -175,13 +193,13 @@ const buildMainIndexFile = (categories, name, ) => {
 
 fs.readFile('pawn.svg', function(err, buf) {
   const json = SVG2Json(buf.toString())
+  console.log(json['svg']['g'])
   const svgParts = JSON2SVGParts(json).filter(a => a)
   const folderNames = []
 
   svgParts.forEach(fileData => {
     if(!fileData) return
     const dir = `output/${fileData.key}`
-
     if (!fs.existsSync(dir)){
       fs.mkdirSync(dir);
     }

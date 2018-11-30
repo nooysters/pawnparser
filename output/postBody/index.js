@@ -23,7 +23,14 @@ export const components = {
   [IDS.WORN_SHIELD_LEFT]: WornShieldLeft
 }
 
-export const Group = () => <g id="postBody">{components}</g>
+export const Group = () => (
+  <g id="postBody">
+    {Object.keys(components).map(key => {
+      const Element = components[key]
+      return <Element />
+    })}
+  </g>
+)
 
 uiSchemaService.register(CATEGORY, [
   {

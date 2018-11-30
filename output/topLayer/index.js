@@ -35,7 +35,14 @@ export const components = {
   [IDS.FLAME_RIGHT]: FlameRight
 }
 
-export const Group = () => <g id="topLayer">{components}</g>
+export const Group = () => (
+  <g id="topLayer">
+    {Object.keys(components).map(key => {
+      const Element = components[key]
+      return <Element />
+    })}
+  </g>
+)
 
 uiSchemaService.register(CATEGORY, [
   {

@@ -41,7 +41,14 @@ export const components = {
   [IDS.SCROLL_R_IGHT1]: ScrollRIght1
 }
 
-export const Group = () => <g id="utility">{components}</g>
+export const Group = () => (
+  <g id="utility">
+    {Object.keys(components).map(key => {
+      const Element = components[key]
+      return <Element />
+    })}
+  </g>
+)
 
 uiSchemaService.register(CATEGORY, [
   {

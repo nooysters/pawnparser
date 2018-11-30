@@ -26,7 +26,14 @@ export const components = {
   [IDS.PLATE_HELM_GOLD]: PlateHelmGold
 }
 
-export const Group = () => <g id="helmet">{components}</g>
+export const Group = () => (
+  <g id="helmet">
+    {Object.keys(components).map(key => {
+      const Element = components[key]
+      return <Element />
+    })}
+  </g>
+)
 
 uiSchemaService.register(CATEGORY, [
   {

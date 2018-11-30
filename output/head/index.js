@@ -20,7 +20,14 @@ export const components = {
   [IDS.NOSE_WIDE]: NoseWide
 }
 
-export const Group = () => <g id="head">{components}</g>
+export const Group = () => (
+  <g id="head">
+    {Object.keys(components).map(key => {
+      const Element = components[key]
+      return <Element />
+    })}
+  </g>
+)
 
 uiSchemaService.register(CATEGORY, [
   {
