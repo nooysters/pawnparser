@@ -1,0 +1,26 @@
+{
+  "name": "svg_react_builder_thingy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jka",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.1.6",
+    "@balajmarius/svg2jsx": "^1.1.0",
+    "babel": "^6.23.0",
+    "fast-xml-parser": "^3.12.9",
+    "he": "^1.2.0",
+    "objtree": "^0.1.24",
+    "svg-parser": "^1.0.5"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-react-jsx-compat": "^7.0.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-inline-react-svg": "^1.0.1",
+    "prettier": "1.15.3"
+  }
+}
