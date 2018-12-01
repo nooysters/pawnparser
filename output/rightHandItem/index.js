@@ -50,102 +50,102 @@ export const components = {
   [IDS.SLING_SHO_RIGHT]: SlingShoRight
 }
 
-export const Group = () => (
+export const Group = ({ props }) => (
   <g id="rightHandItem">
     {Object.keys(components).map(key => {
       const Element = components[key]
-      return <Element />
+      return <Element {...props} key={key} />
     })}
   </g>
 )
 
 uiSchemaService.register(CATEGORY, [
   {
-    id: [IDS.WARHAMMER_R1],
+    id: IDS.WARHAMMER_R1,
     name: "Warhammer R1",
     layerId: 0,
     colors: 1,
     component: components[IDS.WARHAMMER_R1]
   },
   {
-    id: [IDS.MACE_R],
+    id: IDS.MACE_R,
     name: "Mace R",
     layerId: 0,
     colors: 1,
     component: components[IDS.MACE_R]
   },
   {
-    id: [IDS.BOW_RIGHT],
+    id: IDS.BOW_RIGHT,
     name: "Bow Right",
     layerId: 0,
     colors: 1,
     component: components[IDS.BOW_RIGHT]
   },
   {
-    id: [IDS.STAFF_RIGHT],
+    id: IDS.STAFF_RIGHT,
     name: "Staff Right",
     layerId: 0,
     colors: 1,
     component: components[IDS.STAFF_RIGHT]
   },
   {
-    id: [IDS.AXE1_RIGHT],
+    id: IDS.AXE1_RIGHT,
     name: "Axe1 Right",
     layerId: 0,
     colors: 1,
     component: components[IDS.AXE1_RIGHT]
   },
   {
-    id: [IDS.LUTE_RIGHT1],
+    id: IDS.LUTE_RIGHT1,
     name: "Lute Right1",
     layerId: 0,
     colors: 1,
     component: components[IDS.LUTE_RIGHT1]
   },
   {
-    id: [IDS.DAGGER_RIGHT1],
+    id: IDS.DAGGER_RIGHT1,
     name: "Dagger Right1",
     layerId: 0,
     colors: 1,
     component: components[IDS.DAGGER_RIGHT1]
   },
   {
-    id: [IDS.GOLD_AXE_RIGHT],
+    id: IDS.GOLD_AXE_RIGHT,
     name: "Gold Axe Right",
     layerId: 0,
     colors: 1,
     component: components[IDS.GOLD_AXE_RIGHT]
   },
   {
-    id: [IDS.BATTLE_AXE_RIGHT],
+    id: IDS.BATTLE_AXE_RIGHT,
     name: "Battle Axe Right",
     layerId: 0,
     colors: 1,
     component: components[IDS.BATTLE_AXE_RIGHT]
   },
   {
-    id: [IDS.MORNING_STAR_RIGHT2],
+    id: IDS.MORNING_STAR_RIGHT2,
     name: "Morning Star Right2",
     layerId: 0,
     colors: 1,
     component: components[IDS.MORNING_STAR_RIGHT2]
   },
   {
-    id: [IDS.LONGSWORD_RIGHT],
+    id: IDS.LONGSWORD_RIGHT,
     name: "Longsword Right",
     layerId: 0,
     colors: 1,
     component: components[IDS.LONGSWORD_RIGHT]
   },
   {
-    id: [IDS.SHORTSWORD_RIGHT2],
+    id: IDS.SHORTSWORD_RIGHT2,
     name: "Shortsword Right2",
     layerId: 0,
     colors: 1,
     component: components[IDS.SHORTSWORD_RIGHT2]
   },
   {
-    id: [IDS.SLING_SHO_RIGHT],
+    id: IDS.SLING_SHO_RIGHT,
     name: "Sling Sho Right",
     layerId: 0,
     colors: 1,

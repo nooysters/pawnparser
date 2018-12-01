@@ -20,32 +20,32 @@ export const components = {
   [IDS.NOSE_WIDE]: NoseWide
 }
 
-export const Group = () => (
+export const Group = ({ props }) => (
   <g id="head">
     {Object.keys(components).map(key => {
       const Element = components[key]
-      return <Element />
+      return <Element {...props} key={key} />
     })}
   </g>
 )
 
 uiSchemaService.register(CATEGORY, [
   {
-    id: [IDS.HEAD_BASE1],
+    id: IDS.HEAD_BASE1,
     name: "Head Base1",
     layerId: 0,
     colors: 1,
     component: components[IDS.HEAD_BASE1]
   },
   {
-    id: [IDS.EYES_ROUND],
+    id: IDS.EYES_ROUND,
     name: "Eyes Round",
     layerId: 0,
     colors: 1,
     component: components[IDS.EYES_ROUND]
   },
   {
-    id: [IDS.NOSE_WIDE],
+    id: IDS.NOSE_WIDE,
     name: "Nose Wide",
     layerId: 0,
     colors: 1,

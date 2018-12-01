@@ -23,39 +23,39 @@ export const components = {
   [IDS.STRAP_BOOTS]: StrapBoots
 }
 
-export const Group = () => (
+export const Group = ({ props }) => (
   <g id="footwear">
     {Object.keys(components).map(key => {
       const Element = components[key]
-      return <Element />
+      return <Element {...props} key={key} />
     })}
   </g>
 )
 
 uiSchemaService.register(CATEGORY, [
   {
-    id: [IDS.BLACK_BOOTS1],
+    id: IDS.BLACK_BOOTS1,
     name: "Black Boots1",
     layerId: 0,
     colors: 1,
     component: components[IDS.BLACK_BOOTS1]
   },
   {
-    id: [IDS.BROWN_BOOTS],
+    id: IDS.BROWN_BOOTS,
     name: "Brown Boots",
     layerId: 0,
     colors: 1,
     component: components[IDS.BROWN_BOOTS]
   },
   {
-    id: [IDS.BROWN_SHOES],
+    id: IDS.BROWN_SHOES,
     name: "Brown Shoes",
     layerId: 0,
     colors: 1,
     component: components[IDS.BROWN_SHOES]
   },
   {
-    id: [IDS.STRAP_BOOTS],
+    id: IDS.STRAP_BOOTS,
     name: "Strap Boots",
     layerId: 0,
     colors: 1,

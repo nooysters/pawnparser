@@ -35,67 +35,67 @@ export const components = {
   [IDS.FLAME_RIGHT]: FlameRight
 }
 
-export const Group = () => (
+export const Group = ({ props }) => (
   <g id="topLayer">
     {Object.keys(components).map(key => {
       const Element = components[key]
-      return <Element />
+      return <Element {...props} key={key} />
     })}
   </g>
 )
 
 uiSchemaService.register(CATEGORY, [
   {
-    id: [IDS.BLUE_FLAME_LEFT],
+    id: IDS.BLUE_FLAME_LEFT,
     name: "Blue Flame Left",
     layerId: 0,
     colors: 1,
     component: components[IDS.BLUE_FLAME_LEFT]
   },
   {
-    id: [IDS.BLUE_FLAME_RIGHT],
+    id: IDS.BLUE_FLAME_RIGHT,
     name: "Blue Flame Right",
     layerId: 0,
     colors: 1,
     component: components[IDS.BLUE_FLAME_RIGHT]
   },
   {
-    id: [IDS.ROUND_WOOD_SHIELD_LEFT],
+    id: IDS.ROUND_WOOD_SHIELD_LEFT,
     name: "Round Wood Shield Left",
     layerId: 0,
     colors: 1,
     component: components[IDS.ROUND_WOOD_SHIELD_LEFT]
   },
   {
-    id: [IDS.ROUND_WOOD_SHIELD_RIGHT],
+    id: IDS.ROUND_WOOD_SHIELD_RIGHT,
     name: "Round Wood Shield Right",
     layerId: 0,
     colors: 1,
     component: components[IDS.ROUND_WOOD_SHIELD_RIGHT]
   },
   {
-    id: [IDS.RECTANGLE_SHIELD_RIGHT],
+    id: IDS.RECTANGLE_SHIELD_RIGHT,
     name: "Rectangle Shield Right",
     layerId: 0,
     colors: 1,
     component: components[IDS.RECTANGLE_SHIELD_RIGHT]
   },
   {
-    id: [IDS.RECTANGLE_SHIELD_LEFT],
+    id: IDS.RECTANGLE_SHIELD_LEFT,
     name: "Rectangle Shield Left",
     layerId: 0,
     colors: 1,
     component: components[IDS.RECTANGLE_SHIELD_LEFT]
   },
   {
-    id: [IDS.FLAME_LEFT],
+    id: IDS.FLAME_LEFT,
     name: "Flame Left",
     layerId: 0,
     colors: 1,
     component: components[IDS.FLAME_LEFT]
   },
   {
-    id: [IDS.FLAME_RIGHT],
+    id: IDS.FLAME_RIGHT,
     name: "Flame Right",
     layerId: 0,
     colors: 1,

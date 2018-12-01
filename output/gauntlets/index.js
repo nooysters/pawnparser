@@ -17,25 +17,25 @@ export const components = {
   [IDS.PLATE_GOLD_GAUNTLETS]: PlateGoldGauntlets
 }
 
-export const Group = () => (
+export const Group = ({ props }) => (
   <g id="gauntlets">
     {Object.keys(components).map(key => {
       const Element = components[key]
-      return <Element />
+      return <Element {...props} key={key} />
     })}
   </g>
 )
 
 uiSchemaService.register(CATEGORY, [
   {
-    id: [IDS.PLATE_BASICE_GAUNTLETS],
+    id: IDS.PLATE_BASICE_GAUNTLETS,
     name: "Plate Basice Gauntlets",
     layerId: 0,
     colors: 1,
     component: components[IDS.PLATE_BASICE_GAUNTLETS]
   },
   {
-    id: [IDS.PLATE_GOLD_GAUNTLETS],
+    id: IDS.PLATE_GOLD_GAUNTLETS,
     name: "Plate Gold Gauntlets",
     layerId: 0,
     colors: 1,

@@ -23,39 +23,39 @@ export const components = {
   [IDS.WORN_SHIELD_LEFT]: WornShieldLeft
 }
 
-export const Group = () => (
+export const Group = ({ props }) => (
   <g id="postBody">
     {Object.keys(components).map(key => {
       const Element = components[key]
-      return <Element />
+      return <Element {...props} key={key} />
     })}
   </g>
 )
 
 uiSchemaService.register(CATEGORY, [
   {
-    id: [IDS.NOBEL_CAPE1],
+    id: IDS.NOBEL_CAPE1,
     name: "Nobel Cape1",
     layerId: 0,
     colors: 1,
     component: components[IDS.NOBEL_CAPE1]
   },
   {
-    id: [IDS.OPEN_CLOAK3],
+    id: IDS.OPEN_CLOAK3,
     name: "Open Cloak3",
     layerId: 0,
     colors: 1,
     component: components[IDS.OPEN_CLOAK3]
   },
   {
-    id: [IDS.WORN_SHIELD_RIGHT],
+    id: IDS.WORN_SHIELD_RIGHT,
     name: "Worn Shield Right",
     layerId: 0,
     colors: 1,
     component: components[IDS.WORN_SHIELD_RIGHT]
   },
   {
-    id: [IDS.WORN_SHIELD_LEFT],
+    id: IDS.WORN_SHIELD_LEFT,
     name: "Worn Shield Left",
     layerId: 0,
     colors: 1,

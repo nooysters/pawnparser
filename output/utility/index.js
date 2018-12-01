@@ -41,81 +41,81 @@ export const components = {
   [IDS.SCROLL_R_IGHT1]: ScrollRIght1
 }
 
-export const Group = () => (
+export const Group = ({ props }) => (
   <g id="utility">
     {Object.keys(components).map(key => {
       const Element = components[key]
-      return <Element />
+      return <Element {...props} key={key} />
     })}
   </g>
 )
 
 uiSchemaService.register(CATEGORY, [
   {
-    id: [IDS.BOTA_BAG_RIGHT],
+    id: IDS.BOTA_BAG_RIGHT,
     name: "Bota Bag Right",
     layerId: 0,
     colors: 1,
     component: components[IDS.BOTA_BAG_RIGHT]
   },
   {
-    id: [IDS.BOTA_BAG_LEFT1],
+    id: IDS.BOTA_BAG_LEFT1,
     name: "Bota Bag Left1",
     layerId: 0,
     colors: 1,
     component: components[IDS.BOTA_BAG_LEFT1]
   },
   {
-    id: [IDS.QUIVER_RIGHT],
+    id: IDS.QUIVER_RIGHT,
     name: "Quiver Right",
     layerId: 0,
     colors: 1,
     component: components[IDS.QUIVER_RIGHT]
   },
   {
-    id: [IDS.QUIVER_LEFT1],
+    id: IDS.QUIVER_LEFT1,
     name: "Quiver Left1",
     layerId: 0,
     colors: 1,
     component: components[IDS.QUIVER_LEFT1]
   },
   {
-    id: [IDS.DAGGER_RIGHT],
+    id: IDS.DAGGER_RIGHT,
     name: "Dagger Right",
     layerId: 0,
     colors: 1,
     component: components[IDS.DAGGER_RIGHT]
   },
   {
-    id: [IDS.DAGGER_LEFT],
+    id: IDS.DAGGER_LEFT,
     name: "Dagger Left",
     layerId: 0,
     colors: 1,
     component: components[IDS.DAGGER_LEFT]
   },
   {
-    id: [IDS.SWORD_RIGHT_HIP1],
+    id: IDS.SWORD_RIGHT_HIP1,
     name: "Sword Right Hip1",
     layerId: 0,
     colors: 1,
     component: components[IDS.SWORD_RIGHT_HIP1]
   },
   {
-    id: [IDS.SWORD_LEFT_HIP],
+    id: IDS.SWORD_LEFT_HIP,
     name: "Sword Left Hip",
     layerId: 0,
     colors: 1,
     component: components[IDS.SWORD_LEFT_HIP]
   },
   {
-    id: [IDS.SCROLL_R_IGHT],
+    id: IDS.SCROLL_R_IGHT,
     name: "Scroll R Ight",
     layerId: 0,
     colors: 1,
     component: components[IDS.SCROLL_R_IGHT]
   },
   {
-    id: [IDS.SCROLL_R_IGHT1],
+    id: IDS.SCROLL_R_IGHT1,
     name: "Scroll R Ight1",
     layerId: 0,
     colors: 1,

@@ -17,25 +17,25 @@ export const components = {
   [IDS.HALF_CIRCLE1]: HalfCircle1
 }
 
-export const Group = () => (
+export const Group = ({ props }) => (
   <g id="base">
     {Object.keys(components).map(key => {
       const Element = components[key]
-      return <Element />
+      return <Element {...props} key={key} />
     })}
   </g>
 )
 
 uiSchemaService.register(CATEGORY, [
   {
-    id: [IDS.PEG1],
+    id: IDS.PEG1,
     name: "Peg1",
     layerId: 0,
     colors: 1,
     component: components[IDS.PEG1]
   },
   {
-    id: [IDS.HALF_CIRCLE1],
+    id: IDS.HALF_CIRCLE1,
     name: "Half Circle1",
     layerId: 0,
     colors: 1,

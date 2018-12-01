@@ -23,39 +23,39 @@ export const components = {
   [IDS.NOBEL_CAPE]: NobelCape
 }
 
-export const Group = () => (
+export const Group = ({ props }) => (
   <g id="shoulders">
     {Object.keys(components).map(key => {
       const Element = components[key]
-      return <Element />
+      return <Element {...props} key={key} />
     })}
   </g>
 )
 
 uiSchemaService.register(CATEGORY, [
   {
-    id: [IDS.SHOULDER_PLATE],
+    id: IDS.SHOULDER_PLATE,
     name: "Shoulder Plate",
     layerId: 0,
     colors: 1,
     component: components[IDS.SHOULDER_PLATE]
   },
   {
-    id: [IDS.SHOULDER_PLATE_GOLD],
+    id: IDS.SHOULDER_PLATE_GOLD,
     name: "Shoulder Plate Gold",
     layerId: 0,
     colors: 1,
     component: components[IDS.SHOULDER_PLATE_GOLD]
   },
   {
-    id: [IDS.LEATHER_SHOULDER_LAYERED],
+    id: IDS.LEATHER_SHOULDER_LAYERED,
     name: "Leather Shoulder Layered",
     layerId: 0,
     colors: 1,
     component: components[IDS.LEATHER_SHOULDER_LAYERED]
   },
   {
-    id: [IDS.NOBEL_CAPE],
+    id: IDS.NOBEL_CAPE,
     name: "Nobel Cape",
     layerId: 0,
     colors: 1,

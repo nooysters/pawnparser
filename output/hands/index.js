@@ -17,25 +17,25 @@ export const components = {
   [IDS.RIGHT_HAND]: RightHand
 }
 
-export const Group = () => (
+export const Group = ({ props }) => (
   <g id="hands">
     {Object.keys(components).map(key => {
       const Element = components[key]
-      return <Element />
+      return <Element {...props} key={key} />
     })}
   </g>
 )
 
 uiSchemaService.register(CATEGORY, [
   {
-    id: [IDS.LEFT_HAND],
+    id: IDS.LEFT_HAND,
     name: "Left Hand",
     layerId: 0,
     colors: 1,
     component: components[IDS.LEFT_HAND]
   },
   {
-    id: [IDS.RIGHT_HAND],
+    id: IDS.RIGHT_HAND,
     name: "Right Hand",
     layerId: 0,
     colors: 1,

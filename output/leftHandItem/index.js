@@ -50,102 +50,102 @@ export const components = {
   [IDS.SLING_SHOT_LEFT]: SlingShotLeft
 }
 
-export const Group = () => (
+export const Group = ({ props }) => (
   <g id="leftHandItem">
     {Object.keys(components).map(key => {
       const Element = components[key]
-      return <Element />
+      return <Element {...props} key={key} />
     })}
   </g>
 )
 
 uiSchemaService.register(CATEGORY, [
   {
-    id: [IDS.WARHAMMER_L],
+    id: IDS.WARHAMMER_L,
     name: "Warhammer L",
     layerId: 0,
     colors: 1,
     component: components[IDS.WARHAMMER_L]
   },
   {
-    id: [IDS.MACE_L],
+    id: IDS.MACE_L,
     name: "Mace L",
     layerId: 0,
     colors: 1,
     component: components[IDS.MACE_L]
   },
   {
-    id: [IDS.BOW_LEFT1],
+    id: IDS.BOW_LEFT1,
     name: "Bow Left1",
     layerId: 0,
     colors: 1,
     component: components[IDS.BOW_LEFT1]
   },
   {
-    id: [IDS.STAFF_LEFT],
+    id: IDS.STAFF_LEFT,
     name: "Staff Left",
     layerId: 0,
     colors: 1,
     component: components[IDS.STAFF_LEFT]
   },
   {
-    id: [IDS.AXE1_LEFT],
+    id: IDS.AXE1_LEFT,
     name: "Axe1 Left",
     layerId: 0,
     colors: 1,
     component: components[IDS.AXE1_LEFT]
   },
   {
-    id: [IDS.LUTE_LEFT2],
+    id: IDS.LUTE_LEFT2,
     name: "Lute Left2",
     layerId: 0,
     colors: 1,
     component: components[IDS.LUTE_LEFT2]
   },
   {
-    id: [IDS.DAGGER_LEFT2],
+    id: IDS.DAGGER_LEFT2,
     name: "Dagger Left2",
     layerId: 0,
     colors: 1,
     component: components[IDS.DAGGER_LEFT2]
   },
   {
-    id: [IDS.GOLD_AXE_LEFT],
+    id: IDS.GOLD_AXE_LEFT,
     name: "Gold Axe Left",
     layerId: 0,
     colors: 1,
     component: components[IDS.GOLD_AXE_LEFT]
   },
   {
-    id: [IDS.BATTLE_AXE_LEFT],
+    id: IDS.BATTLE_AXE_LEFT,
     name: "Battle Axe Left",
     layerId: 0,
     colors: 1,
     component: components[IDS.BATTLE_AXE_LEFT]
   },
   {
-    id: [IDS.MORNING_STAR_LEFT1],
+    id: IDS.MORNING_STAR_LEFT1,
     name: "Morning Star Left1",
     layerId: 0,
     colors: 1,
     component: components[IDS.MORNING_STAR_LEFT1]
   },
   {
-    id: [IDS.LONGSWORD_LEFT],
+    id: IDS.LONGSWORD_LEFT,
     name: "Longsword Left",
     layerId: 0,
     colors: 1,
     component: components[IDS.LONGSWORD_LEFT]
   },
   {
-    id: [IDS.SHORTSWORD_LEFT1],
+    id: IDS.SHORTSWORD_LEFT1,
     name: "Shortsword Left1",
     layerId: 0,
     colors: 1,
     component: components[IDS.SHORTSWORD_LEFT1]
   },
   {
-    id: [IDS.SLING_SHOT_LEFT],
+    id: IDS.SLING_SHOT_LEFT,
     name: "Sling Shot Left",
     layerId: 0,
     colors: 1,
