@@ -1,8 +1,8 @@
 const toConstantCase = (s) =>
 	s.replace(/([A-Z])/g, ($1) => "_"+$1).toUpperCase().replace("_", "")
 
-// const toPascal = (s) =>
-//   s.replace(/\w+/g, function(w){return w[0].toUpperCase() + w.slice(1).toLowerCase();});
+const toPascal = (s) =>
+  s.replace(/\w+/g, function(w){return w[0].toUpperCase() + w.slice(1).toLowerCase();});
 
 /**
  *
@@ -14,9 +14,9 @@ import React from 'react'
 import { connectToAllEnabledElements } from '../../builderConnector'
 
 
-const ${componentName} = ({ enabledLayers }) => {
+const ${componentName} = ({ allEnabledElements }) => {
   return (
-    enabledLayers.includes('${toConstantCase(componentName)}') ? ${svg} : null
+    allEnabledElements.includes('${componentName}') ? ${svg} : null
   )
 }
 

@@ -3,42 +3,42 @@ import connectToBuilder from "../../builderConnector"
 import { uiSchemaService } from "../../uiSchema"
 
 import BotaBagRight from "./BotaBagRight"
-import BotaBagLeft1 from "./BotaBagLeft1"
+import BotaBagLeft from "./BotaBagLeft"
 import QuiverRight from "./QuiverRight"
-import QuiverLeft1 from "./QuiverLeft1"
+import QuiverLeft from "./QuiverLeft"
 import DaggerRight from "./DaggerRight"
 import DaggerLeft from "./DaggerLeft"
-import SwordRightHip1 from "./SwordRightHip1"
+import SwordRightHip from "./SwordRightHip"
 import SwordLeftHip from "./SwordLeftHip"
-import ScrollRIght from "./ScrollRIght"
-import ScrollRIght1 from "./ScrollRIght1"
+import ScrollRight from "./ScrollRight"
+import ScrollLeft from "./ScrollLeft"
 
 const CATEGORY = "utility"
 
 export const IDS = {
   BOTA_BAG_RIGHT: "BotaBagRight",
-  BOTA_BAG_LEFT1: "BotaBagLeft1",
+  BOTA_BAG_LEFT: "BotaBagLeft",
   QUIVER_RIGHT: "QuiverRight",
-  QUIVER_LEFT1: "QuiverLeft1",
+  QUIVER_LEFT: "QuiverLeft",
   DAGGER_RIGHT: "DaggerRight",
   DAGGER_LEFT: "DaggerLeft",
-  SWORD_RIGHT_HIP1: "SwordRightHip1",
+  SWORD_RIGHT_HIP: "SwordRightHip",
   SWORD_LEFT_HIP: "SwordLeftHip",
-  SCROLL_R_IGHT: "ScrollRIght",
-  SCROLL_R_IGHT1: "ScrollRIght1"
+  SCROLL_RIGHT: "ScrollRight",
+  SCROLL_LEFT: "ScrollLeft"
 }
 
 export const components = {
   [IDS.BOTA_BAG_RIGHT]: BotaBagRight,
-  [IDS.BOTA_BAG_LEFT1]: BotaBagLeft1,
+  [IDS.BOTA_BAG_LEFT]: BotaBagLeft,
   [IDS.QUIVER_RIGHT]: QuiverRight,
-  [IDS.QUIVER_LEFT1]: QuiverLeft1,
+  [IDS.QUIVER_LEFT]: QuiverLeft,
   [IDS.DAGGER_RIGHT]: DaggerRight,
   [IDS.DAGGER_LEFT]: DaggerLeft,
-  [IDS.SWORD_RIGHT_HIP1]: SwordRightHip1,
+  [IDS.SWORD_RIGHT_HIP]: SwordRightHip,
   [IDS.SWORD_LEFT_HIP]: SwordLeftHip,
-  [IDS.SCROLL_R_IGHT]: ScrollRIght,
-  [IDS.SCROLL_R_IGHT1]: ScrollRIght1
+  [IDS.SCROLL_RIGHT]: ScrollRight,
+  [IDS.SCROLL_LEFT]: ScrollLeft
 }
 
 export const Group = ({ props }) => (
@@ -56,70 +56,80 @@ uiSchemaService.register(CATEGORY, [
     name: "Bota Bag Right",
     layerId: 0,
     colors: 1,
-    component: components[IDS.BOTA_BAG_RIGHT]
+    component: components[IDS.BOTA_BAG_RIGHT],
+    enabled: true
   },
   {
-    id: IDS.BOTA_BAG_LEFT1,
-    name: "Bota Bag Left1",
+    id: IDS.BOTA_BAG_LEFT,
+    name: "Bota Bag Left",
     layerId: 0,
     colors: 1,
-    component: components[IDS.BOTA_BAG_LEFT1]
+    component: components[IDS.BOTA_BAG_LEFT],
+    enabled: true
   },
   {
     id: IDS.QUIVER_RIGHT,
     name: "Quiver Right",
     layerId: 0,
     colors: 1,
-    component: components[IDS.QUIVER_RIGHT]
+    component: components[IDS.QUIVER_RIGHT],
+    enabled: true
   },
   {
-    id: IDS.QUIVER_LEFT1,
-    name: "Quiver Left1",
+    id: IDS.QUIVER_LEFT,
+    name: "Quiver Left",
     layerId: 0,
     colors: 1,
-    component: components[IDS.QUIVER_LEFT1]
+    component: components[IDS.QUIVER_LEFT],
+    enabled: true
   },
   {
     id: IDS.DAGGER_RIGHT,
     name: "Dagger Right",
     layerId: 0,
     colors: 1,
-    component: components[IDS.DAGGER_RIGHT]
+    component: components[IDS.DAGGER_RIGHT],
+    enabled: true
   },
   {
     id: IDS.DAGGER_LEFT,
     name: "Dagger Left",
     layerId: 0,
     colors: 1,
-    component: components[IDS.DAGGER_LEFT]
+    component: components[IDS.DAGGER_LEFT],
+    enabled: true
   },
   {
-    id: IDS.SWORD_RIGHT_HIP1,
-    name: "Sword Right Hip1",
+    id: IDS.SWORD_RIGHT_HIP,
+    name: "Sword Right Hip",
     layerId: 0,
     colors: 1,
-    component: components[IDS.SWORD_RIGHT_HIP1]
+    component: components[IDS.SWORD_RIGHT_HIP],
+    enabled: true
   },
   {
     id: IDS.SWORD_LEFT_HIP,
     name: "Sword Left Hip",
     layerId: 0,
     colors: 1,
-    component: components[IDS.SWORD_LEFT_HIP]
+    component: components[IDS.SWORD_LEFT_HIP],
+    enabled: true
   },
   {
-    id: IDS.SCROLL_R_IGHT,
-    name: "Scroll R Ight",
+    id: IDS.SCROLL_RIGHT,
+    name: "Scroll Right",
     layerId: 0,
     colors: 1,
-    component: components[IDS.SCROLL_R_IGHT]
+    component: components[IDS.SCROLL_RIGHT],
+    enabled: true
   },
   {
-    id: IDS.SCROLL_R_IGHT1,
-    name: "Scroll R Ight1",
+    id: IDS.SCROLL_LEFT,
+    name: "Scroll Left",
     layerId: 0,
     colors: 1,
-    component: components[IDS.SCROLL_R_IGHT1]
+    component: components[IDS.SCROLL_LEFT],
+    enabled: true
   }
 ])
 

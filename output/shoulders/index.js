@@ -38,28 +38,32 @@ uiSchemaService.register(CATEGORY, [
     name: "Shoulder Plate",
     layerId: 0,
     colors: 1,
-    component: components[IDS.SHOULDER_PLATE]
+    component: components[IDS.SHOULDER_PLATE],
+    enabled: true
   },
   {
     id: IDS.SHOULDER_PLATE_GOLD,
     name: "Shoulder Plate Gold",
     layerId: 0,
     colors: 1,
-    component: components[IDS.SHOULDER_PLATE_GOLD]
+    component: components[IDS.SHOULDER_PLATE_GOLD],
+    enabled: true
   },
   {
     id: IDS.LEATHER_SHOULDER_LAYERED,
     name: "Leather Shoulder Layered",
     layerId: 0,
     colors: 1,
-    component: components[IDS.LEATHER_SHOULDER_LAYERED]
+    component: components[IDS.LEATHER_SHOULDER_LAYERED],
+    enabled: true
   },
   {
     id: IDS.NOBEL_CAPE,
     name: "Nobel Cape",
     layerId: 0,
     colors: 1,
-    component: components[IDS.NOBEL_CAPE]
+    component: components[IDS.NOBEL_CAPE],
+    enabled: true
   }
 ])
 

@@ -32,14 +32,16 @@ uiSchemaService.register(CATEGORY, [
     name: "Left Hand",
     layerId: 0,
     colors: 1,
-    component: components[IDS.LEFT_HAND]
+    component: components[IDS.LEFT_HAND],
+    enabled: false
   },
   {
     id: IDS.RIGHT_HAND,
     name: "Right Hand",
     layerId: 0,
     colors: 1,
-    component: components[IDS.RIGHT_HAND]
+    component: components[IDS.RIGHT_HAND],
+    enabled: false
   }
 ])
 

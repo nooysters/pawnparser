@@ -2,19 +2,19 @@ import React from "react"
 import connectToBuilder from "../../builderConnector"
 import { uiSchemaService } from "../../uiSchema"
 
-import Peg1 from "./Peg1"
-import HalfCircle1 from "./HalfCircle1"
+import Peg from "./Peg"
+import HalfCircle from "./HalfCircle"
 
 const CATEGORY = "base"
 
 export const IDS = {
-  PEG1: "Peg1",
-  HALF_CIRCLE1: "HalfCircle1"
+  PEG: "Peg",
+  HALF_CIRCLE: "HalfCircle"
 }
 
 export const components = {
-  [IDS.PEG1]: Peg1,
-  [IDS.HALF_CIRCLE1]: HalfCircle1
+  [IDS.PEG]: Peg,
+  [IDS.HALF_CIRCLE]: HalfCircle
 }
 
 export const Group = ({ props }) => (
@@ -28,18 +28,20 @@ export const Group = ({ props }) => (
 
 uiSchemaService.register(CATEGORY, [
   {
-    id: IDS.PEG1,
-    name: "Peg1",
+    id: IDS.PEG,
+    name: "Peg",
     layerId: 0,
     colors: 1,
-    component: components[IDS.PEG1]
+    component: components[IDS.PEG],
+    enabled: true
   },
   {
-    id: IDS.HALF_CIRCLE1,
-    name: "Half Circle1",
+    id: IDS.HALF_CIRCLE,
+    name: "Half Circle",
     layerId: 0,
     colors: 1,
-    component: components[IDS.HALF_CIRCLE1]
+    component: components[IDS.HALF_CIRCLE],
+    enabled: true
   }
 ])
 

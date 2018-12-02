@@ -22,3 +22,4 @@ export default ${componentName}
 `)
 
 module.exports = svgComponentTemplate
+

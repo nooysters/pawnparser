@@ -1,8 +1,8 @@
 import React from "react"
 
-const ScrollRIght = ({ color = [] }) => {
+const ScrollRight = ({ color = [] }) => {
   return (
-    <g id="ScrollRIght">
+    <g id="ScrollRight">
       <polygon
         fill="#4D391B"
         points="38.9,99.8 47.9,76.5 49.7,76.6 49.4,93.3 47.8,93.6 47.9,80.6 40.5,98.7"
@@ -31,4 +31,4 @@ const ScrollRIght = ({ color = [] }) => {
   )
 }
 
-export default ScrollRIght
+export default ScrollRight

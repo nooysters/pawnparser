@@ -2,27 +2,27 @@ import React from "react"
 import connectToBuilder from "../../builderConnector"
 import { uiSchemaService } from "../../uiSchema"
 
-import LeatherHelm1 from "./LeatherHelm1"
-import PlateHelm11 from "./PlateHelm11"
+import LeatherHelm from "./LeatherHelm"
+import PlateHelm from "./PlateHelm"
 import WizardHat from "./WizardHat"
-import Antlers1 from "./Antlers1"
+import Antlers from "./Antlers"
 import PlateHelmGold from "./PlateHelmGold"
 
 const CATEGORY = "helmet"
 
 export const IDS = {
-  LEATHER_HELM1: "LeatherHelm1",
-  PLATE_HELM11: "PlateHelm11",
+  LEATHER_HELM: "LeatherHelm",
+  PLATE_HELM: "PlateHelm",
   WIZARD_HAT: "WizardHat",
-  ANTLERS1: "Antlers1",
+  ANTLERS: "Antlers",
   PLATE_HELM_GOLD: "PlateHelmGold"
 }
 
 export const components = {
-  [IDS.LEATHER_HELM1]: LeatherHelm1,
-  [IDS.PLATE_HELM11]: PlateHelm11,
+  [IDS.LEATHER_HELM]: LeatherHelm,
+  [IDS.PLATE_HELM]: PlateHelm,
   [IDS.WIZARD_HAT]: WizardHat,
-  [IDS.ANTLERS1]: Antlers1,
+  [IDS.ANTLERS]: Antlers,
   [IDS.PLATE_HELM_GOLD]: PlateHelmGold
 }
 
@@ -37,39 +37,44 @@ export const Group = ({ props }) => (
 
 uiSchemaService.register(CATEGORY, [
   {
-    id: IDS.LEATHER_HELM1,
-    name: "Leather Helm1",
+    id: IDS.LEATHER_HELM,
+    name: "Leather Helm",
     layerId: 0,
     colors: 1,
-    component: components[IDS.LEATHER_HELM1]
+    component: components[IDS.LEATHER_HELM],
+    enabled: true
   },
   {
-    id: IDS.PLATE_HELM11,
-    name: "Plate Helm11",
+    id: IDS.PLATE_HELM,
+    name: "Plate Helm",
     layerId: 0,
     colors: 1,
-    component: components[IDS.PLATE_HELM11]
+    component: components[IDS.PLATE_HELM],
+    enabled: true
   },
   {
     id: IDS.WIZARD_HAT,
     name: "Wizard Hat",
     layerId: 0,
     colors: 1,
-    component: components[IDS.WIZARD_HAT]
+    component: components[IDS.WIZARD_HAT],
+    enabled: true
   },
   {
-    id: IDS.ANTLERS1,
-    name: "Antlers1",
+    id: IDS.ANTLERS,
+    name: "Antlers",
     layerId: 0,
     colors: 1,
-    component: components[IDS.ANTLERS1]
+    component: components[IDS.ANTLERS],
+    enabled: true
   },
   {
     id: IDS.PLATE_HELM_GOLD,
     name: "Plate Helm Gold",
     layerId: 0,
     colors: 1,
-    component: components[IDS.PLATE_HELM_GOLD]
+    component: components[IDS.PLATE_HELM_GOLD],
+    enabled: true
   }
 ])
 

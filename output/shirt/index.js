@@ -3,36 +3,36 @@ import connectToBuilder from "../../builderConnector"
 import { uiSchemaService } from "../../uiSchema"
 
 import WhiteCollar from "./WhiteCollar"
-import TuckedInShirt1 from "./TuckedInShirt1"
-import PlateArmor1 from "./PlateArmor1"
-import LeatherArmor1 from "./LeatherArmor1"
+import TuckedInShirt from "./TuckedInShirt"
+import PlateArmor from "./PlateArmor"
+import LeatherArmor from "./LeatherArmor"
 import BardVest from "./BardVest"
 import WizardRobe from "./WizardRobe"
-import PlateGoldArmor1 from "./PlateGoldArmor1"
-import Vest1 from "./Vest1"
+import PlateGoldArmor from "./PlateGoldArmor"
+import Vest from "./Vest"
 
 const CATEGORY = "shirt"
 
 export const IDS = {
   WHITE_COLLAR: "WhiteCollar",
-  TUCKED_IN_SHIRT1: "TuckedInShirt1",
-  PLATE_ARMOR1: "PlateArmor1",
-  LEATHER_ARMOR1: "LeatherArmor1",
+  TUCKED_IN_SHIRT: "TuckedInShirt",
+  PLATE_ARMOR: "PlateArmor",
+  LEATHER_ARMOR: "LeatherArmor",
   BARD_VEST: "BardVest",
   WIZARD_ROBE: "WizardRobe",
-  PLATE_GOLD_ARMOR1: "PlateGoldArmor1",
-  VEST1: "Vest1"
+  PLATE_GOLD_ARMOR: "PlateGoldArmor",
+  VEST: "Vest"
 }
 
 export const components = {
   [IDS.WHITE_COLLAR]: WhiteCollar,
-  [IDS.TUCKED_IN_SHIRT1]: TuckedInShirt1,
-  [IDS.PLATE_ARMOR1]: PlateArmor1,
-  [IDS.LEATHER_ARMOR1]: LeatherArmor1,
+  [IDS.TUCKED_IN_SHIRT]: TuckedInShirt,
+  [IDS.PLATE_ARMOR]: PlateArmor,
+  [IDS.LEATHER_ARMOR]: LeatherArmor,
   [IDS.BARD_VEST]: BardVest,
   [IDS.WIZARD_ROBE]: WizardRobe,
-  [IDS.PLATE_GOLD_ARMOR1]: PlateGoldArmor1,
-  [IDS.VEST1]: Vest1
+  [IDS.PLATE_GOLD_ARMOR]: PlateGoldArmor,
+  [IDS.VEST]: Vest
 }
 
 export const Group = ({ props }) => (
@@ -50,56 +50,64 @@ uiSchemaService.register(CATEGORY, [
     name: "White Collar",
     layerId: 0,
     colors: 1,
-    component: components[IDS.WHITE_COLLAR]
+    component: components[IDS.WHITE_COLLAR],
+    enabled: true
   },
   {
-    id: IDS.TUCKED_IN_SHIRT1,
-    name: "Tucked In Shirt1",
+    id: IDS.TUCKED_IN_SHIRT,
+    name: "Tucked In Shirt",
     layerId: 0,
     colors: 1,
-    component: components[IDS.TUCKED_IN_SHIRT1]
+    component: components[IDS.TUCKED_IN_SHIRT],
+    enabled: true
   },
   {
-    id: IDS.PLATE_ARMOR1,
-    name: "Plate Armor1",
+    id: IDS.PLATE_ARMOR,
+    name: "Plate Armor",
     layerId: 0,
     colors: 1,
-    component: components[IDS.PLATE_ARMOR1]
+    component: components[IDS.PLATE_ARMOR],
+    enabled: true
   },
   {
-    id: IDS.LEATHER_ARMOR1,
-    name: "Leather Armor1",
+    id: IDS.LEATHER_ARMOR,
+    name: "Leather Armor",
     layerId: 0,
     colors: 1,
-    component: components[IDS.LEATHER_ARMOR1]
+    component: components[IDS.LEATHER_ARMOR],
+    enabled: true
   },
   {
     id: IDS.BARD_VEST,
     name: "Bard Vest",
     layerId: 0,
     colors: 1,
-    component: components[IDS.BARD_VEST]
+    component: components[IDS.BARD_VEST],
+    enabled: true
   },
   {
     id: IDS.WIZARD_ROBE,
     name: "Wizard Robe",
     layerId: 0,
     colors: 1,
-    component: components[IDS.WIZARD_ROBE]
+    component: components[IDS.WIZARD_ROBE],
+    enabled: true
   },
   {
-    id: IDS.PLATE_GOLD_ARMOR1,
-    name: "Plate Gold Armor1",
+    id: IDS.PLATE_GOLD_ARMOR,
+    name: "Plate Gold Armor",
     layerId: 0,
     colors: 1,
-    component: components[IDS.PLATE_GOLD_ARMOR1]
+    component: components[IDS.PLATE_GOLD_ARMOR],
+    enabled: true
   },
   {
-    id: IDS.VEST1,
-    name: "Vest1",
+    id: IDS.VEST,
+    name: "Vest",
     layerId: 0,
     colors: 1,
-    component: components[IDS.VEST1]
+    component: components[IDS.VEST],
+    enabled: true
   }
 ])
 

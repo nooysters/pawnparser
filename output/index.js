@@ -1,24 +1,25 @@
 import React from "react"
 
 import Base from "./base"
-import Shadow from "./shadow"
-import Postbody from "./postBody"
-import Body from "./body"
-import Arms from "./arms"
+import { Group as Shadow } from "./shadow"
+import Back from "./back"
+import { Group as Postbody } from "./postBody"
+import { Group as Body } from "./body"
+import { Group as Arms } from "./arms"
 import Pants from "./pants"
 import Footwear from "./footwear"
 import Shirt from "./shirt"
 import Utility from "./utility"
 import Gauntlets from "./gauntlets"
 import Shoulders from "./shoulders"
-import Head from "./head"
+import { Group as Head } from "./head"
 import Hair from "./hair"
 import Helmet from "./helmet"
 import Cloaks from "./cloaks"
-import Thumbs from "./thumbs"
+import { Group as Thumbs } from "./thumbs"
 import Righthanditem from "./rightHandItem"
 import Lefthanditem from "./leftHandItem"
-import Hands from "./hands"
+import { Group as Hands } from "./hands"
 import Toplayer from "./topLayer"
 
 class ManDwarf extends React.Component {
@@ -39,6 +40,7 @@ class ManDwarf extends React.Component {
       >
         <Base />
         <Shadow />
+        <Back />
         <Postbody />
         <Body />
         <Arms />

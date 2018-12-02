@@ -8,7 +8,7 @@ const toPascal = (s) =>
  *
  *
  */
-const indexTemplate = (componentNames, category) => (`
+const indexTemplate = (componentNames, category, options) => (`
 import React from 'react'
 import connectToBuilder from '../../builderConnector'
 import { uiSchemaService } from '../../uiSchema'
@@ -47,7 +47,8 @@ uiSchemaService.register(CATEGORY, [
       name: '${component.replace(/([A-Z])/g, ' $1').trim()}',
       layerId: 0,
       colors: 1,
-      component: components[IDS.${toConstantCase(component)}]
+      component: components[IDS.${toConstantCase(component)}],
+      enabled: ${!options.includes("G")}
     }`
   ).join(',')}
 ])

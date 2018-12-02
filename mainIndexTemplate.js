@@ -9,7 +9,9 @@ const mainIndex = (categories, name) => (`
 import React from 'react'
 
 ${categories.map(category =>
-    `import ${toPascal(category)} from './${category}'`
+  category.options.includes('G')
+    ? `import { Group as ${toPascal(category.key)} } from './${category.key}'`
+    : `import ${toPascal(category.key)} from './${category.key}'`
   ).join('\n')
 }
 
@@ -29,7 +31,7 @@ class ${name} extends React.Component {
         viewBox="0 0 114 152.8"
       >
       ${categories.map(category =>
-          `<${toPascal(category)} />`
+          `<${toPascal(category.key)} />`
         ).join('\n')
       }
       </svg>

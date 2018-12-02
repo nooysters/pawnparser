@@ -4,16 +4,16 @@ import { uiSchemaService } from "../../uiSchema"
 
 import WarhammerL from "./WarhammerL"
 import MaceL from "./MaceL"
-import BowLeft1 from "./BowLeft1"
+import BowLeft from "./BowLeft"
 import StaffLeft from "./StaffLeft"
-import Axe1Left from "./Axe1Left"
-import LuteLeft2 from "./LuteLeft2"
-import DaggerLeft2 from "./DaggerLeft2"
+import AxeLeft from "./AxeLeft"
+import LuteLeft from "./LuteLeft"
+import DaggerLeft from "./DaggerLeft"
 import GoldAxeLeft from "./GoldAxeLeft"
 import BattleAxeLeft from "./BattleAxeLeft"
-import MorningStarLeft1 from "./MorningStarLeft1"
+import MorningStarLeft from "./MorningStarLeft"
 import LongswordLeft from "./LongswordLeft"
-import ShortswordLeft1 from "./ShortswordLeft1"
+import ShortswordLeft from "./ShortswordLeft"
 import SlingShotLeft from "./SlingShotLeft"
 
 const CATEGORY = "leftHandItem"
@@ -21,32 +21,32 @@ const CATEGORY = "leftHandItem"
 export const IDS = {
   WARHAMMER_L: "WarhammerL",
   MACE_L: "MaceL",
-  BOW_LEFT1: "BowLeft1",
+  BOW_LEFT: "BowLeft",
   STAFF_LEFT: "StaffLeft",
-  AXE1_LEFT: "Axe1Left",
-  LUTE_LEFT2: "LuteLeft2",
-  DAGGER_LEFT2: "DaggerLeft2",
+  AXE_LEFT: "AxeLeft",
+  LUTE_LEFT: "LuteLeft",
+  DAGGER_LEFT: "DaggerLeft",
   GOLD_AXE_LEFT: "GoldAxeLeft",
   BATTLE_AXE_LEFT: "BattleAxeLeft",
-  MORNING_STAR_LEFT1: "MorningStarLeft1",
+  MORNING_STAR_LEFT: "MorningStarLeft",
   LONGSWORD_LEFT: "LongswordLeft",
-  SHORTSWORD_LEFT1: "ShortswordLeft1",
+  SHORTSWORD_LEFT: "ShortswordLeft",
   SLING_SHOT_LEFT: "SlingShotLeft"
 }
 
 export const components = {
   [IDS.WARHAMMER_L]: WarhammerL,
   [IDS.MACE_L]: MaceL,
-  [IDS.BOW_LEFT1]: BowLeft1,
+  [IDS.BOW_LEFT]: BowLeft,
   [IDS.STAFF_LEFT]: StaffLeft,
-  [IDS.AXE1_LEFT]: Axe1Left,
-  [IDS.LUTE_LEFT2]: LuteLeft2,
-  [IDS.DAGGER_LEFT2]: DaggerLeft2,
+  [IDS.AXE_LEFT]: AxeLeft,
+  [IDS.LUTE_LEFT]: LuteLeft,
+  [IDS.DAGGER_LEFT]: DaggerLeft,
   [IDS.GOLD_AXE_LEFT]: GoldAxeLeft,
   [IDS.BATTLE_AXE_LEFT]: BattleAxeLeft,
-  [IDS.MORNING_STAR_LEFT1]: MorningStarLeft1,
+  [IDS.MORNING_STAR_LEFT]: MorningStarLeft,
   [IDS.LONGSWORD_LEFT]: LongswordLeft,
-  [IDS.SHORTSWORD_LEFT1]: ShortswordLeft1,
+  [IDS.SHORTSWORD_LEFT]: ShortswordLeft,
   [IDS.SLING_SHOT_LEFT]: SlingShotLeft
 }
 
@@ -65,91 +65,104 @@ uiSchemaService.register(CATEGORY, [
     name: "Warhammer L",
     layerId: 0,
     colors: 1,
-    component: components[IDS.WARHAMMER_L]
+    component: components[IDS.WARHAMMER_L],
+    enabled: true
   },
   {
     id: IDS.MACE_L,
     name: "Mace L",
     layerId: 0,
     colors: 1,
-    component: components[IDS.MACE_L]
+    component: components[IDS.MACE_L],
+    enabled: true
   },
   {
-    id: IDS.BOW_LEFT1,
-    name: "Bow Left1",
+    id: IDS.BOW_LEFT,
+    name: "Bow Left",
     layerId: 0,
     colors: 1,
-    component: components[IDS.BOW_LEFT1]
+    component: components[IDS.BOW_LEFT],
+    enabled: true
   },
   {
     id: IDS.STAFF_LEFT,
     name: "Staff Left",
     layerId: 0,
     colors: 1,
-    component: components[IDS.STAFF_LEFT]
+    component: components[IDS.STAFF_LEFT],
+    enabled: true
   },
   {
-    id: IDS.AXE1_LEFT,
-    name: "Axe1 Left",
+    id: IDS.AXE_LEFT,
+    name: "Axe Left",
     layerId: 0,
     colors: 1,
-    component: components[IDS.AXE1_LEFT]
+    component: components[IDS.AXE_LEFT],
+    enabled: true
   },
   {
-    id: IDS.LUTE_LEFT2,
-    name: "Lute Left2",
+    id: IDS.LUTE_LEFT,
+    name: "Lute Left",
     layerId: 0,
     colors: 1,
-    component: components[IDS.LUTE_LEFT2]
+    component: components[IDS.LUTE_LEFT],
+    enabled: true
   },
   {
-    id: IDS.DAGGER_LEFT2,
-    name: "Dagger Left2",
+    id: IDS.DAGGER_LEFT,
+    name: "Dagger Left",
     layerId: 0,
     colors: 1,
-    component: components[IDS.DAGGER_LEFT2]
+    component: components[IDS.DAGGER_LEFT],
+    enabled: true
   },
   {
     id: IDS.GOLD_AXE_LEFT,
     name: "Gold Axe Left",
     layerId: 0,
     colors: 1,
-    component: components[IDS.GOLD_AXE_LEFT]
+    component: components[IDS.GOLD_AXE_LEFT],
+    enabled: true
   },
   {
     id: IDS.BATTLE_AXE_LEFT,
     name: "Battle Axe Left",
     layerId: 0,
     colors: 1,
-    component: components[IDS.BATTLE_AXE_LEFT]
+    component: components[IDS.BATTLE_AXE_LEFT],
+    enabled: true
   },
   {
-    id: IDS.MORNING_STAR_LEFT1,
-    name: "Morning Star Left1",
+    id: IDS.MORNING_STAR_LEFT,
+    name: "Morning Star Left",
     layerId: 0,
     colors: 1,
-    component: components[IDS.MORNING_STAR_LEFT1]
+    component: components[IDS.MORNING_STAR_LEFT],
+    enabled: true
   },
   {
     id: IDS.LONGSWORD_LEFT,
     name: "Longsword Left",
     layerId: 0,
     colors: 1,
-    component: components[IDS.LONGSWORD_LEFT]
+    component: components[IDS.LONGSWORD_LEFT],
+    enabled: true
   },
   {
-    id: IDS.SHORTSWORD_LEFT1,
-    name: "Shortsword Left1",
+    id: IDS.SHORTSWORD_LEFT,
+    name: "Shortsword Left",
     layerId: 0,
     colors: 1,
-    component: components[IDS.SHORTSWORD_LEFT1]
+    component: components[IDS.SHORTSWORD_LEFT],
+    enabled: true
   },
   {
     id: IDS.SLING_SHOT_LEFT,
     name: "Sling Shot Left",
     layerId: 0,
     colors: 1,
-    component: components[IDS.SLING_SHOT_LEFT]
+    component: components[IDS.SLING_SHOT_LEFT],
+    enabled: true
   }
 ])
 

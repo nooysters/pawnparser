@@ -21,11 +21,10 @@ const JSON2SVGParts = (jsonSVG) => {
 const createSvgFromJson = (ig) => {
   if(!ig) return console.log(ig)
 
-  const opts = ig['-id'].split(DELIMITER)
-  let fileName = opts.pop()
-  const options = opts
+  const options = ig['-id'].split(DELIMITER)
+  let fileName = options.pop()
 
-  const fileNameClean = fileName.replace(/_/g, '')
+  const fileNameClean = fileName.replace(/_|\d/g, '')
 
   if (fileNameClean.length > 0) {
     const componentName = fileNameClean[0].toUpperCase() + fileNameClean.substring(1)
@@ -36,8 +35,9 @@ const createSvgFromJson = (ig) => {
 }
 
 const formatGroupComponents = (g) => {
-  const folderName = g['-id']
-  const output = { key: folderName, files: [] }
+  const options = g['-id'].split(DELIMITER)
+  const folderName = options.pop()
+  const output = { key: folderName, files: [], options }
 
   if(g['g'] === undefined && !g.hasOwnProperty('path')) {
     files = createSvgFromJson(g)
@@ -93,22 +93,25 @@ const buildFile = (dir, fileData) => {
 }
 
 const buildIndexFile = (dir, fileData) => {
-  const data = indexTemplate(fileData.files.map(fd => fd.componentName), fileData.key)
+  const data = indexTemplate(fileData.files.map(fd => fd.componentName), fileData.key, fileData.options)
   const pretty = prettier.format(data, { semi: false, parser: 'babylon' })
 
   saveFile(`${dir}/index.js`, pretty)
 }
 
-const buildMainIndexFile = (categories, name, ) => {
+const buildMainIndexFile = (categories, name) => {
   const data = mainIndex(categories, name)
   const pretty = prettier.format(data, { semi: false, parser: 'babylon' })
 
   saveFile(`output/index.js`, pretty)
 }
 
+if (!fs.existsSync('output')){
+  fs.mkdirSync('output');
+}
+
 fs.readFile('pawn.svg', function(err, buf) {
   const json = SVG2Json(buf.toString())
-  // console.log(json['svg']['g'])
   const svgParts = JSON2SVGParts(json).filter(a => a)
   const folderNames = []
 
@@ -123,6 +126,6 @@ fs.readFile('pawn.svg', function(err, buf) {
     buildIndexFile(dir, fileData)
   })
 
-  buildMainIndexFile(svgParts.map(f => f.key), 'ManDwarf')
+  buildMainIndexFile(svgParts.map(f => f), 'ManDwarf')
 })
 

@@ -32,14 +32,16 @@ uiSchemaService.register(CATEGORY, [
     name: "Plate Basice Gauntlets",
     layerId: 0,
     colors: 1,
-    component: components[IDS.PLATE_BASICE_GAUNTLETS]
+    component: components[IDS.PLATE_BASICE_GAUNTLETS],
+    enabled: true
   },
   {
     id: IDS.PLATE_GOLD_GAUNTLETS,
     name: "Plate Gold Gauntlets",
     layerId: 0,
     colors: 1,
-    component: components[IDS.PLATE_GOLD_GAUNTLETS]
+    component: components[IDS.PLATE_GOLD_GAUNTLETS],
+    enabled: true
   }
 ])
 
