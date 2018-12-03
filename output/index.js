@@ -2,23 +2,28 @@ import React from "react"
 
 import Base from "./base"
 import { Group as Shadow } from "./shadow"
-import Back from "./back"
 import { Group as Postbody } from "./postBody"
+import Equipped from "./equipped"
 import { Group as Body } from "./body"
 import { Group as Arms } from "./arms"
 import Pants from "./pants"
-import Footwear from "./footwear"
-import Shirt from "./shirt"
-import Utility from "./utility"
+import Shoes from "./shoes"
+import Shirts from "./shirts"
+import Vests from "./vests"
+import Armor from "./armor"
+import Robe from "./robe"
+import Gear from "./gear"
 import Gauntlets from "./gauntlets"
 import Shoulders from "./shoulders"
 import { Group as Head } from "./head"
 import Hair from "./hair"
-import Helmet from "./helmet"
+import Beard from "./beard"
+import Helm from "./helm"
+import Headwear from "./headWear"
 import Cloaks from "./cloaks"
 import { Group as Thumbs } from "./thumbs"
-import Righthanditem from "./rightHandItem"
-import Lefthanditem from "./leftHandItem"
+import Weaponright from "./weaponRight"
+import Weaponleft from "./weaponLeft"
 import { Group as Hands } from "./hands"
 import Toplayer from "./topLayer"
 
@@ -40,23 +45,28 @@ class ManDwarf extends React.Component {
       >
         <Base />
         <Shadow />
-        <Back />
         <Postbody />
+        <Equipped />
         <Body />
         <Arms />
         <Pants />
-        <Footwear />
-        <Shirt />
-        <Utility />
+        <Shoes />
+        <Shirts />
+        <Vests />
+        <Armor />
+        <Robe />
+        <Gear />
         <Gauntlets />
         <Shoulders />
         <Head />
         <Hair />
-        <Helmet />
+        <Beard />
+        <Helm />
+        <Headwear />
         <Cloaks />
         <Thumbs />
-        <Righthanditem />
-        <Lefthanditem />
+        <Weaponright />
+        <Weaponleft />
         <Hands />
         <Toplayer />
       </svg>

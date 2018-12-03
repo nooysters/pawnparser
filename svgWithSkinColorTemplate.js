@@ -9,17 +9,18 @@
  * @param {*} componentName
  * @param {*} svg
  */
-const svgComponentTemplate = (componentName, svg, options={}) => (`
+const svgWithSkinColorTemplate = (componentName, svg, options={}) => (`
 import React from 'react'
+import { withSkinColor } from "../../builderConnector"
 
-const ${componentName} = ({ color = [] }) => {
+const ${componentName} = ({ skinColor, color = [] }) => {
   return (
-    ${svg}
+    ${svg.replace(/\"#E8B180\"/g, "{ skinColor }")}
   )
 }
 
-export default ${componentName}
+export default withSkinColor(${componentName})
 `)
 
-module.exports = svgComponentTemplate
+module.exports = svgWithSkinColorTemplate
 

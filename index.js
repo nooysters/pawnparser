@@ -6,6 +6,7 @@ const svg2jsx = require('@balajmarius/svg2jsx')
 const indexTemplate = require('./indexCategoryTemplate')
 const mainIndex = require('./mainIndexTemplate')
 const svgComponentTemplate = require('./svgComponentTemplate')
+const svgWithSkinColorTemplate = require('./svgWithSkinColorTemplate')
 const shadowTemplate = require('./shadowTemplate')
 
 const DELIMITER = `_x24_`
@@ -76,6 +77,9 @@ const saveFile = (filePath, data) => {
 }
 
 const buildWithTemplate = (fc, svg, opts = {}) => {
+  if(opts.includes('K')) {
+    return svgWithSkinColorTemplate(fc, svg)
+  }
   if(opts.includes('S')) {
     return shadowTemplate(fc, svg)
   }
