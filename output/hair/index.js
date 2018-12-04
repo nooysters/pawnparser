@@ -27,10 +27,11 @@ uiSchemaService.register(CATEGORY, [
   {
     id: IDS.HAIR_ONE,
     name: "Hair One",
-    layerId: 0,
     colors: 1,
     component: components[IDS.HAIR_ONE],
-    enabled: true
+    inUI: true,
+    enabled: true,
+    subGroupId: 0
   }
 ])
 

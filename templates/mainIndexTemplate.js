@@ -9,7 +9,7 @@ const mainIndex = (categories, name) => (`
 import React from 'react'
 
 ${categories.map(category =>
-  category.options.includes('G')
+  category.options.groupEnabled
     ? `import { Group as ${toPascal(category.key)} } from './${category.key}'`
     : `import ${toPascal(category.key)} from './${category.key}'`
   ).join('\n')

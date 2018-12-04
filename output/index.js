@@ -16,6 +16,8 @@ import Gear from "./gear"
 import Gauntlets from "./gauntlets"
 import Shoulders from "./shoulders"
 import { Group as Head } from "./head"
+import Nose from "./nose"
+import Eyes from "./eyes"
 import Hair from "./hair"
 import Beard from "./beard"
 import Helm from "./helm"
@@ -25,7 +27,8 @@ import { Group as Thumbs } from "./thumbs"
 import Weaponright from "./weaponRight"
 import Weaponleft from "./weaponLeft"
 import { Group as Hands } from "./hands"
-import Toplayer from "./topLayer"
+import Frontshield from "./frontShield"
+import Magic from "./magic"
 
 class ManDwarf extends React.Component {
   constructor(props) {
@@ -59,6 +62,8 @@ class ManDwarf extends React.Component {
         <Gauntlets />
         <Shoulders />
         <Head />
+        <Nose />
+        <Eyes />
         <Hair />
         <Beard />
         <Helm />
@@ -68,7 +73,8 @@ class ManDwarf extends React.Component {
         <Weaponright />
         <Weaponleft />
         <Hands />
-        <Toplayer />
+        <Frontshield />
+        <Magic />
       </svg>
     )
   }

@@ -30,18 +30,20 @@ uiSchemaService.register(CATEGORY, [
   {
     id: IDS.NOBEL_CAPE,
     name: "Nobel Cape",
-    layerId: 0,
     colors: 1,
     component: components[IDS.NOBEL_CAPE],
-    enabled: false
+    inUI: false,
+    enabled: false,
+    subGroupId: 0
   },
   {
     id: IDS.OPEN_CLOAK,
     name: "Open Cloak",
-    layerId: 0,
     colors: 1,
     component: components[IDS.OPEN_CLOAK],
-    enabled: false
+    inUI: false,
+    enabled: false,
+    subGroupId: 0
   }
 ])
 

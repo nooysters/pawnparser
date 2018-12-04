@@ -30,18 +30,20 @@ uiSchemaService.register(CATEGORY, [
   {
     id: IDS.BASIC_PANTS,
     name: "Basic Pants",
-    layerId: 0,
     colors: 1,
     component: components[IDS.BASIC_PANTS],
-    enabled: true
+    inUI: true,
+    enabled: true,
+    subGroupId: 0
   },
   {
     id: IDS.KNICKERS,
     name: "Knickers",
-    layerId: 0,
     colors: 1,
     component: components[IDS.KNICKERS],
-    enabled: true
+    inUI: true,
+    enabled: false,
+    subGroupId: 0
   }
 ])
 

@@ -30,18 +30,20 @@ uiSchemaService.register(CATEGORY, [
   {
     id: IDS.LEFT_HAND,
     name: "Left Hand",
-    layerId: 0,
     colors: 1,
     component: components[IDS.LEFT_HAND],
-    enabled: false
+    inUI: false,
+    enabled: false,
+    subGroupId: 0
   },
   {
     id: IDS.RIGHT_HAND,
     name: "Right Hand",
-    layerId: 0,
     colors: 1,
     component: components[IDS.RIGHT_HAND],
-    enabled: false
+    inUI: false,
+    enabled: false,
+    subGroupId: 0
   }
 ])
 

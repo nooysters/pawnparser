@@ -8,26 +8,26 @@ const toPascal = (s) =>
  *
  *
  */
-const indexTemplate = (componentNames, category, options) => (`
+const indexTemplate = (components, category, options) => (`
 import React from 'react'
 import connectToBuilder from '../../builderConnector'
 import { uiSchemaService } from '../../uiSchema'
 
-${componentNames.map(component =>
-  `import ${component} from './${component}'`
+${components.map(component =>
+  `import ${component.componentName} from './${component.componentName}'`
 ).join('\n')}
 
 const CATEGORY = "${category}"
 
 export const IDS = {
-  ${componentNames.map(component =>
-    `${toConstantCase(component)}: '${component}'`
+  ${components.map(component =>
+    `${toConstantCase(component.componentName)}: '${component.componentName}'`
   ).join(',')}
 }
 
 export const components = {
-  ${componentNames.map(component =>
-    `[IDS.${toConstantCase(component)}]: ${component}`
+  ${components.map(component =>
+    `[IDS.${toConstantCase(component.componentName)}]: ${component.componentName}`
   ).join(',')}
 }
 
@@ -41,14 +41,15 @@ export const Group = ({ props }) => <g id="${category}">
 </g>
 
 uiSchemaService.register(CATEGORY, [
-  ${componentNames.map(component =>
+  ${components.map(component =>
     `{
-      id: IDS.${toConstantCase(component)},
-      name: '${component.replace(/([A-Z])/g, ' $1').trim()}',
-      layerId: 0,
+      id: IDS.${toConstantCase(component.componentName)},
+      name: '${component.componentName.replace(/([A-Z])/g, ' $1').trim()}',
       colors: 1,
-      component: components[IDS.${toConstantCase(component)}],
-      enabled: ${!options.includes("G")}
+      component: components[IDS.${toConstantCase(component.componentName)}],
+      inUI: ${!options.groupEnabled},
+      enabled: ${component.options.defaultEnabled},
+      subGroupId: ${component.options.subGroupId}
     }`
   ).join(',')}
 ])

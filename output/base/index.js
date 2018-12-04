@@ -30,18 +30,20 @@ uiSchemaService.register(CATEGORY, [
   {
     id: IDS.PEG,
     name: "Peg",
-    layerId: 0,
     colors: 1,
     component: components[IDS.PEG],
-    enabled: true
+    inUI: true,
+    enabled: false,
+    subGroupId: 0
   },
   {
     id: IDS.HALF_CIRCLE,
     name: "Half Circle",
-    layerId: 0,
     colors: 1,
     component: components[IDS.HALF_CIRCLE],
-    enabled: true
+    inUI: true,
+    enabled: true,
+    subGroupId: 0
   }
 ])
 

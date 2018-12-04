@@ -3,15 +3,44 @@ const xotree = new ObjTree()
 const fs = require('fs')
 const prettier = require('prettier');
 const svg2jsx = require('@balajmarius/svg2jsx')
-const indexTemplate = require('./indexCategoryTemplate')
-const mainIndex = require('./mainIndexTemplate')
-const svgComponentTemplate = require('./svgComponentTemplate')
-const svgWithSkinColorTemplate = require('./svgWithSkinColorTemplate')
-const shadowTemplate = require('./shadowTemplate')
+const indexTemplate = require('./templates/indexCategoryTemplate')
+const mainIndex = require('./templates/mainIndexTemplate')
+const svgComponentTemplate = require('./templates/svgComponentTemplate')
+const svgWithSkinColorTemplate = require('./templates/svgWithSkinColorTemplate')
+const shadowTemplate = require('./templates/shadowTemplate')
 
 const DELIMITER = `_x24_`
 
 const SVG2Json = (xmlData) => xotree.parseXML(xmlData)
+
+// const OPTIONS = {
+//   'G': 'uses group',
+//   'K': 'has skin color',
+//   'S': 'is a shadow'
+// }
+
+const parseOptions = (id_string) => {
+  const options = id_string.split(DELIMITER)
+  const fileName = options.pop().replace(/_|\d/g, '')
+  console.log(fileName)
+  const subGroupId = options.reduce((level, o) => {
+    return o[0] === "L"
+      ?  o[1]
+      : level
+  }, 0)
+
+  const opts = {
+    fileName: fileName,
+    componentName: fileName[0].toUpperCase() + fileName.substring(1),
+    groupEnabled: options.includes('G'),
+    hasSkinColor: options.includes('K'),
+    isShadow: options.includes('S'),
+    defaultEnabled: options.includes('D'),
+    subGroupId
+  }
+
+  return opts
+}
 
 const JSON2SVGParts = (jsonSVG) => {
   return jsonSVG['svg']['g'].map(g => {
@@ -22,23 +51,16 @@ const JSON2SVGParts = (jsonSVG) => {
 const createSvgFromJson = (ig) => {
   if(!ig) return console.log(ig)
 
-  const options = ig['-id'].split(DELIMITER)
-  let fileName = options.pop()
+  const options = parseOptions(ig['-id'])
 
-  const fileNameClean = fileName.replace(/_|\d/g, '')
-
-  if (fileNameClean.length > 0) {
-    const componentName = fileNameClean[0].toUpperCase() + fileNameClean.substring(1)
-    const xml = xotree.writeXML( ig )
-    const cleanSVG = xml.replace(`<?xml version="1.0" encoding="UTF-8" ?>`, '')
-   return { componentName, svg: cleanSVG, options }
-  }
+  const xml = xotree.writeXML(ig)
+  const cleanSVG = xml.replace(`<?xml version="1.0" encoding="UTF-8" ?>`, '')
+  return { componentName: options.componentName, svg: cleanSVG, options }
 }
 
 const formatGroupComponents = (g) => {
-  const options = g['-id'].split(DELIMITER)
-  const folderName = options.pop()
-  const output = { key: folderName, files: [], options }
+  const options = parseOptions(g['-id'])
+  const output = { key: options.fileName, files: [], options }
 
   if(g['g'] === undefined && !g.hasOwnProperty('path')) {
     files = createSvgFromJson(g)
@@ -70,17 +92,19 @@ const formatGroupComponents = (g) => {
 const cleanSvg = f => svg2jsx(`<g id='${f.componentName}'>${f.svg}</g>`)
 
 const saveFile = (filePath, data) => {
-  fs.writeFile(filePath, data, function(err, data) {
+  const pretty = prettier.format(data, { semi: false, parser: 'babylon' })
+
+  fs.writeFile(filePath, pretty, function(err, _data) {
     if (err) console.log(err)
-    console.log('Successfully Written to File.')
+    //console.log('Successfully Written to File.')
   });
 }
 
 const buildWithTemplate = (fc, svg, opts = {}) => {
-  if(opts.includes('K')) {
+  if(opts.hasSkinColor) {
     return svgWithSkinColorTemplate(fc, svg)
   }
-  if(opts.includes('S')) {
+  if(opts.isShadow) {
     return shadowTemplate(fc, svg)
   }
   return svgComponentTemplate(fc, svg)
@@ -89,25 +113,18 @@ const buildWithTemplate = (fc, svg, opts = {}) => {
 const buildFile = (dir, fileData) => {
   cleanSvg(fileData).then(svg => {
     const data = buildWithTemplate(fileData.componentName, svg, fileData.options)
-
-    const pretty = prettier.format(data, { semi: false, parser: 'babylon' })
-
-    saveFile(`${dir}/${fileData.componentName}.js`, pretty)
+    saveFile(`${dir}/${fileData.componentName}.js`, data)
   })
 }
 
 const buildIndexFile = (dir, fileData) => {
-  const data = indexTemplate(fileData.files.map(fd => fd.componentName), fileData.key, fileData.options)
-  const pretty = prettier.format(data, { semi: false, parser: 'babylon' })
-
-  saveFile(`${dir}/index.js`, pretty)
+  const data = indexTemplate(fileData.files, fileData.key, fileData.options)
+  saveFile(`${dir}/index.js`, data)
 }
 
 const buildMainIndexFile = (categories, name) => {
   const data = mainIndex(categories, name)
-  const pretty = prettier.format(data, { semi: false, parser: 'babylon' })
-
-  saveFile(`output/index.js`, pretty)
+  saveFile(`output/index.js`, data)
 }
 
 if (!fs.existsSync('output')){
@@ -127,6 +144,7 @@ fs.readFile('pawn.svg', function(err, buf) {
     }
     folderNames.push(fileData.key)
     fileData.files.forEach(file => buildFile(dir, file))
+
     buildIndexFile(dir, fileData)
   })
 

@@ -48,66 +48,74 @@ uiSchemaService.register(CATEGORY, [
   {
     id: IDS.BLUE_FLAME_LEFT,
     name: "Blue Flame Left",
-    layerId: 0,
     colors: 1,
     component: components[IDS.BLUE_FLAME_LEFT],
-    enabled: true
+    inUI: true,
+    enabled: false,
+    subGroupId: 0
   },
   {
     id: IDS.BLUE_FLAME_RIGHT,
     name: "Blue Flame Right",
-    layerId: 0,
     colors: 1,
     component: components[IDS.BLUE_FLAME_RIGHT],
-    enabled: true
+    inUI: true,
+    enabled: false,
+    subGroupId: 0
   },
   {
     id: IDS.ROUND_WOOD_SHIELD_LEFT,
     name: "Round Wood Shield Left",
-    layerId: 0,
     colors: 1,
     component: components[IDS.ROUND_WOOD_SHIELD_LEFT],
-    enabled: true
+    inUI: true,
+    enabled: false,
+    subGroupId: 0
   },
   {
     id: IDS.ROUND_WOOD_SHIELD_RIGHT,
     name: "Round Wood Shield Right",
-    layerId: 0,
     colors: 1,
     component: components[IDS.ROUND_WOOD_SHIELD_RIGHT],
-    enabled: true
+    inUI: true,
+    enabled: false,
+    subGroupId: 0
   },
   {
     id: IDS.RECTANGLE_SHIELD_RIGHT,
     name: "Rectangle Shield Right",
-    layerId: 0,
     colors: 1,
     component: components[IDS.RECTANGLE_SHIELD_RIGHT],
-    enabled: true
+    inUI: true,
+    enabled: false,
+    subGroupId: 0
   },
   {
     id: IDS.RECTANGLE_SHIELD_LEFT,
     name: "Rectangle Shield Left",
-    layerId: 0,
     colors: 1,
     component: components[IDS.RECTANGLE_SHIELD_LEFT],
-    enabled: true
+    inUI: true,
+    enabled: false,
+    subGroupId: 0
   },
   {
     id: IDS.FLAME_LEFT,
     name: "Flame Left",
-    layerId: 0,
     colors: 1,
     component: components[IDS.FLAME_LEFT],
-    enabled: true
+    inUI: true,
+    enabled: false,
+    subGroupId: 0
   },
   {
     id: IDS.FLAME_RIGHT,
     name: "Flame Right",
-    layerId: 0,
     colors: 1,
     component: components[IDS.FLAME_RIGHT],
-    enabled: true
+    inUI: true,
+    enabled: false,
+    subGroupId: 0
   }
 ])
 
