@@ -1,6 +1,8 @@
 import React from "react"
 
-const LeatherShoulderLayered = ({ color = [] }) => {
+const LeatherShoulderLayered = ({
+  colors = ["#A97C50", "#8B5E3C", "#603913", "#SVGID_", "#FFFFFF", "#C49A6C"]
+}) => {
   return (
     <g id="LeatherShoulderLayered">
       <g opacity="0.2">
@@ -10,18 +12,18 @@ const LeatherShoulderLayered = ({ color = [] }) => {
         <path d="M78.8,55.8c0.5-0.6,1-0.9,1-0.9c-1.6-0.9-3.4-1.5-4.8-1.8c0.3-0.7,0.5-1.1,0.5-1.1c-4.8-2-9.9,0.2-9.9,0.2l1.7,6.7 c-0.3,0.3-0.4,0.7-0.4,1.1l0,0c0,0.1,0,0.2,0,0.2c0,0.7,0.4,1.3,1,1.5c-0.1,0.2,0.3,0.4,2.8-0.2c0.7,0.2,1.7,0.3,3.2,0.2 c0.7,0.1,1.6,0.3,2.6,0.6c1.5-3.1,4.7-4.9,4.7-4.9C80.3,56.8,79.5,56.3,78.8,55.8z" />
       </g>
       <path
-        fill="#A97C50"
+        fill={colors[0]}
         d="M32.6,57.7c0,0,3.1,1.8,4.7,4.9c5.6-1.2,5.6-1.2,5.6-1.2l-3.1-7.2C39.8,54.2,35.3,54.7,32.6,57.7z"
       />
       <path
-        fill="#8B5E3C"
+        fill={colors[1]}
         d="M33.8,55.1c0,0,3.6,2.8,3.9,6.7c5.8,1,6.8-0.6,6.8-0.6l-2.7-8.3C41.8,52.8,37.5,53,33.8,55.1z"
       />
       <path
-        fill="#A97C50"
+        fill={colors[0]}
         d="M38.1,52.2c0,0,2.3,4.3,2.1,9c6.3,1.6,5.8,0.9,5.4,0.6l2.4-9.4C48.1,52.4,42.9,50.2,38.1,52.2z"
       />
-      <circle fill="#603913" cx="45.1" cy="60.5" r="1.7" />
+      <circle fill={colors[2]} cx="45.1" cy="60.5" r="1.7" />
       <circle fill="url(#SVGID_10_)" cx="45.1" cy="60.2" r="1.7" />
       <radialGradient
         id="SVGID_10_"
@@ -37,18 +39,18 @@ const LeatherShoulderLayered = ({ color = [] }) => {
       </radialGradient>
       <g>
         <path
-          fill="#A97C50"
+          fill={colors[0]}
           d="M81,57.7c0,0-3.1,1.8-4.7,4.9c-5.6-1.2-5.6-1.2-5.6-1.2l3.1-7.2C73.8,54.2,78.3,54.7,81,57.7z"
         />
         <path
-          fill="#8B5E3C"
+          fill={colors[1]}
           d="M79.8,55.1c0,0-3.6,2.8-3.9,6.7c-5.8,1-6.8-0.6-6.8-0.6l2.7-8.3C71.8,52.8,76.1,53,79.8,55.1z"
         />
         <path
-          fill="#A97C50"
+          fill={colors[0]}
           d="M75.5,52.2c0,0-2.3,4.3-2.1,9c-6.3,1.6-5.8,0.9-5.4,0.6l-2.4-9.4C65.5,52.4,70.7,50.2,75.5,52.2z"
         />
-        <circle fill="#603913" cx="68.5" cy="60.5" r="1.7" />
+        <circle fill={colors[2]} cx="68.5" cy="60.5" r="1.7" />
         <circle fill="url(#SVGID_11_)" cx="68.5" cy="60.2" r="1.7" />
         <radialGradient
           id="SVGID_11_"

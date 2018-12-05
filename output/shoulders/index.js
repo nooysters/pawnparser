@@ -36,7 +36,8 @@ uiSchemaService.register(CATEGORY, [
   {
     id: IDS.SHOULDER_PLATE,
     name: "Shoulder Plate",
-    colors: 1,
+    defaultColors: ["#9E9E9E", "#808080"],
+    colorable: false,
     component: components[IDS.SHOULDER_PLATE],
     inUI: true,
     enabled: false,
@@ -45,7 +46,8 @@ uiSchemaService.register(CATEGORY, [
   {
     id: IDS.SHOULDER_PLATE_GOLD,
     name: "Shoulder Plate Gold",
-    colors: 1,
+    defaultColors: ["#8A784E", "#EED793", "#A59A76"],
+    colorable: false,
     component: components[IDS.SHOULDER_PLATE_GOLD],
     inUI: true,
     enabled: false,
@@ -54,7 +56,15 @@ uiSchemaService.register(CATEGORY, [
   {
     id: IDS.LEATHER_SHOULDER_LAYERED,
     name: "Leather Shoulder Layered",
-    colors: 1,
+    defaultColors: [
+      "#A97C50",
+      "#8B5E3C",
+      "#603913",
+      "#SVGID_",
+      "#FFFFFF",
+      "#C49A6C"
+    ],
+    colorable: false,
     component: components[IDS.LEATHER_SHOULDER_LAYERED],
     inUI: true,
     enabled: false,
@@ -63,7 +73,15 @@ uiSchemaService.register(CATEGORY, [
   {
     id: IDS.NOBEL_CAPE,
     name: "Nobel Cape",
-    colors: 1,
+    defaultColors: [
+      "#8D4D3A",
+      "#D8A16C",
+      "#SVGID_",
+      "#FFFFFF",
+      "#AC7B56",
+      "#F9BE7C"
+    ],
+    colorable: false,
     component: components[IDS.NOBEL_CAPE],
     inUI: true,
     enabled: false,

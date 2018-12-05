@@ -30,7 +30,8 @@ uiSchemaService.register(CATEGORY, [
   {
     id: IDS.LEFT_HAND,
     name: "Left Hand",
-    colors: 1,
+    defaultColors: ["#E8B180"],
+    colorable: false,
     component: components[IDS.LEFT_HAND],
     inUI: false,
     enabled: false,
@@ -39,7 +40,8 @@ uiSchemaService.register(CATEGORY, [
   {
     id: IDS.RIGHT_HAND,
     name: "Right Hand",
-    colors: 1,
+    defaultColors: ["#E8B180"],
+    colorable: false,
     component: components[IDS.RIGHT_HAND],
     inUI: false,
     enabled: false,

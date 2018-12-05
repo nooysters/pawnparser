@@ -27,7 +27,8 @@ uiSchemaService.register(CATEGORY, [
   {
     id: IDS.HAIR_ONE,
     name: "Hair One",
-    colors: 1,
+    defaultColors: ["#EAD8CC"],
+    colorable: true,
     component: components[IDS.HAIR_ONE],
     inUI: true,
     enabled: true,

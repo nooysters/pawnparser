@@ -1,10 +1,10 @@
 import React from "react"
 
-const ShoulderPlate = ({ color = [] }) => {
+const ShoulderPlate = ({ colors = ["#9E9E9E", "#808080"] }) => {
   return (
     <g id="ShoulderPlate">
       <path
-        fill="#9E9E9E"
+        fill={colors[0]}
         d="M33.7,55.4c0,0-0.8,2.5,0.2,4.5c2.9,0.3,10.3-0.1,10.9-2.8c0.2-0.8-0.5-3.2-0.5-3.2 C43.4,53.2,35.4,49.6,33.7,55.4z"
       />
       <path
@@ -13,7 +13,7 @@ const ShoulderPlate = ({ color = [] }) => {
       />
       <g>
         <path
-          fill="#9E9E9E"
+          fill={colors[0]}
           d="M80,55.4c0,0,0.8,2.5-0.2,4.5c-2.9,0.3-10.3-0.1-10.9-2.8c-0.2-0.8,0.5-3.2,0.5-3.2 C70.2,53.2,78.2,49.6,80,55.4z"
         />
         <path

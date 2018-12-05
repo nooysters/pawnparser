@@ -30,7 +30,8 @@ uiSchemaService.register(CATEGORY, [
   {
     id: IDS.BASIC_PANTS,
     name: "Basic Pants",
-    colors: 1,
+    defaultColors: ["#646464"],
+    colorable: false,
     component: components[IDS.BASIC_PANTS],
     inUI: true,
     enabled: true,
@@ -39,7 +40,8 @@ uiSchemaService.register(CATEGORY, [
   {
     id: IDS.KNICKERS,
     name: "Knickers",
-    colors: 1,
+    defaultColors: ["#B98957", "#754C29", "#262262"],
+    colorable: false,
     component: components[IDS.KNICKERS],
     inUI: true,
     enabled: false,

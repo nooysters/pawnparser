@@ -30,7 +30,8 @@ uiSchemaService.register(CATEGORY, [
   {
     id: IDS.NOBEL_CAPE,
     name: "Nobel Cape",
-    colors: 1,
+    defaultColors: ["#8D4D3A"],
+    colorable: false,
     component: components[IDS.NOBEL_CAPE],
     inUI: false,
     enabled: false,
@@ -39,7 +40,8 @@ uiSchemaService.register(CATEGORY, [
   {
     id: IDS.OPEN_CLOAK,
     name: "Open Cloak",
-    colors: 1,
+    defaultColors: ["#2B3B21"],
+    colorable: false,
     component: components[IDS.OPEN_CLOAK],
     inUI: false,
     enabled: false,

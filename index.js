@@ -10,19 +10,16 @@ const svgWithSkinColorTemplate = require('./templates/svgWithSkinColorTemplate')
 const shadowTemplate = require('./templates/shadowTemplate')
 
 const DELIMITER = `_x24_`
+const SHADE_COLOR = `#21376C`
+// const SKIN_COLOR = `#E8B180`
 
 const SVG2Json = (xmlData) => xotree.parseXML(xmlData)
 
-// const OPTIONS = {
-//   'G': 'uses group',
-//   'K': 'has skin color',
-//   'S': 'is a shadow'
-// }
 
 const parseOptions = (id_string) => {
   const options = id_string.split(DELIMITER)
   const fileName = options.pop().replace(/_|\d/g, '')
-  console.log(fileName)
+
   const subGroupId = options.reduce((level, o) => {
     return o[0] === "L"
       ?  o[1]
@@ -36,6 +33,8 @@ const parseOptions = (id_string) => {
     hasSkinColor: options.includes('K'),
     isShadow: options.includes('S'),
     defaultEnabled: options.includes('D'),
+    colorable: options.includes('C'),
+    colors: [],
     subGroupId
   }
 
@@ -54,6 +53,8 @@ const createSvgFromJson = (ig) => {
   const options = parseOptions(ig['-id'])
 
   const xml = xotree.writeXML(ig)
+  options.colors = [... new Set(xml.match(/(#.{6})/g))].filter(c => c !== SHADE_COLOR)
+
   const cleanSVG = xml.replace(`<?xml version="1.0" encoding="UTF-8" ?>`, '')
   return { componentName: options.componentName, svg: cleanSVG, options }
 }
@@ -107,7 +108,7 @@ const buildWithTemplate = (fc, svg, opts = {}) => {
   if(opts.isShadow) {
     return shadowTemplate(fc, svg)
   }
-  return svgComponentTemplate(fc, svg)
+  return svgComponentTemplate(fc, svg, opts)
 }
 
 const buildFile = (dir, fileData) => {

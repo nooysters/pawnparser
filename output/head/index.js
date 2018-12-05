@@ -27,7 +27,8 @@ uiSchemaService.register(CATEGORY, [
   {
     id: IDS.HEAD_BASE,
     name: "Head Base",
-    colors: 1,
+    defaultColors: ["#E8B180"],
+    colorable: false,
     component: components[IDS.HEAD_BASE],
     inUI: false,
     enabled: true,

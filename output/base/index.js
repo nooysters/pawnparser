@@ -30,7 +30,8 @@ uiSchemaService.register(CATEGORY, [
   {
     id: IDS.PEG,
     name: "Peg",
-    colors: 1,
+    defaultColors: ["#3F3F40"],
+    colorable: false,
     component: components[IDS.PEG],
     inUI: true,
     enabled: false,
@@ -39,7 +40,8 @@ uiSchemaService.register(CATEGORY, [
   {
     id: IDS.HALF_CIRCLE,
     name: "Half Circle",
-    colors: 1,
+    defaultColors: [],
+    colorable: false,
     component: components[IDS.HALF_CIRCLE],
     inUI: true,
     enabled: true,

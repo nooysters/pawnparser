@@ -4,6 +4,8 @@ const toConstantCase = (s) =>
 const toPascal = (s) =>
   s.replace(/\w+/g, function(w){return w[0].toUpperCase() + w.slice(1).toLowerCase();});
 
+const color = (options) => options.colors ? options.colors.map(c => `'${c}'`).join(', ') : ''
+
 /**
  *
  *
@@ -45,7 +47,8 @@ uiSchemaService.register(CATEGORY, [
     `{
       id: IDS.${toConstantCase(component.componentName)},
       name: '${component.componentName.replace(/([A-Z])/g, ' $1').trim()}',
-      colors: 1,
+      defaultColors: [${color(component.options)}],
+      colorable: ${component.options.colorable},
       component: components[IDS.${toConstantCase(component.componentName)}],
       inUI: ${!options.groupEnabled},
       enabled: ${component.options.defaultEnabled},

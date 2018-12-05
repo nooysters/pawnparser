@@ -9,12 +9,23 @@
  * @param {*} componentName
  * @param {*} svg
  */
+const replaceColors = (svg, options) => {
+  if (!options.colors) return svg
+
+  return options.colors.reduce((svgOut, color, index) => {
+    const re = new RegExp(`\"${color}\"`,"g");
+    return svgOut.replace(re, `{colors[${index}]}`)
+  }, svg)
+}
+
+const color = (options) => options.colors ? options.colors.map(c => `'${c}'`).join(', ') : ''
+
 const svgComponentTemplate = (componentName, svg, options={}) => (`
 import React from 'react'
 
-const ${componentName} = ({ color = [] }) => {
+const ${componentName} = ({ colors = [${color(options)}] }) => {
   return (
-    ${svg}
+    ${replaceColors(svg, options)}
   )
 }
 

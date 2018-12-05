@@ -30,7 +30,8 @@ uiSchemaService.register(CATEGORY, [
   {
     id: IDS.PLATE_BASICE_GAUNTLETS,
     name: "Plate Basice Gauntlets",
-    colors: 1,
+    defaultColors: ["#9E9E9E", "#808080", "#B8B8B8"],
+    colorable: false,
     component: components[IDS.PLATE_BASICE_GAUNTLETS],
     inUI: true,
     enabled: false,
@@ -39,7 +40,8 @@ uiSchemaService.register(CATEGORY, [
   {
     id: IDS.PLATE_GOLD_GAUNTLETS,
     name: "Plate Gold Gauntlets",
-    colors: 1,
+    defaultColors: ["#A59A76", "#8A784E", "#EED793"],
+    colorable: false,
     component: components[IDS.PLATE_GOLD_GAUNTLETS],
     inUI: true,
     enabled: false,
