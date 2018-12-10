@@ -18,15 +18,13 @@ ${categories.map(category =>
 class ${name} extends React.Component {
   constructor(props) {
     super(props)
-
-    this.svgRef = React.createRef();
   }
 
   render() {
     return (
       <svg
         version="1.1"
-        ref={this.svgRef}
+        ref={this.props.svgRef}
         x="0px" y="0px"
         viewBox="0 0 114 152.8"
       >
