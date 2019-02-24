@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dwarf-female": "SKIN_COLOR=#E8B180 FILE=female_dwarf-2.svg CHARACTER=WomanDwarf SHADE_COLOR=#21376C node ."
+    "dwarf-female": "SKIN_COLOR=#E8B180 FILE=female_dwarf-2.svg CHARACTER=WomanDwarf SHADE_COLOR=#21376C node .",
+    "dragonborn-male": "SKIN_COLOR=#DEA043 FILE=dragonborn-male.svg CHARACTER=ManDragonborn SHADE_COLOR=#262261 node ."
+
   },
   "author": "jka",
   "license": "ISC",

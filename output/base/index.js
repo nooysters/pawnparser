@@ -6,7 +6,7 @@ import HalfCircle from "./HalfCircle"
 import Peg from "./Peg"
 
 const CATEGORY = "base"
-const CHARACTER = "WomanDwarf"
+const CHARACTER = "ManDragonborn"
 export const IDS = {
   HALF_CIRCLE: "HalfCircle",
   PEG: "Peg"

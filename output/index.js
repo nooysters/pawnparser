@@ -3,25 +3,23 @@ import React from "react"
 import { Group as Shadow } from "./shadow"
 import Background from "./background"
 import { Group as Body } from "./body"
-import Undergarments from "./underGarments"
-import { Group as Hands } from "./hands"
-import { Group as Head } from "./head"
-import Face from "./face"
-import Pants from "./pants"
-import Shirts from "./shirts"
-import Armor from "./Armor"
+import Legs from "./legs"
+import Armor from "./armor"
 import Footwear from "./footwear"
-import Hair from "./hair"
-import Overwear from "./overWear"
+import Head from "./head"
+import Horns from "./horns"
 import Gear from "./gear"
-import Weaponright from "./weaponRight"
-import Weaponleft from "./weaponLeft"
-import { Group as Fingers } from "./fingers"
-import Headgear from "./headGear"
+import Braces from "./braces"
+import Shoulderplates from "./shoulderPlates"
+import Overwear from "./overwear"
+import Thumbs from "./thumbs"
+import Lefthanditem from "./leftHandItem"
+import Righthanditem from "./rightHandItem"
+import Hands from "./hands"
 import Foreground from "./foreGround"
 import Base from "./base"
 
-class WomanDwarf extends React.Component {
+class ManDragonborn extends React.Component {
   constructor(props) {
     super(props)
   }
@@ -38,21 +36,19 @@ class WomanDwarf extends React.Component {
         <Shadow />
         <Background />
         <Body />
-        <Undergarments />
-        <Hands />
-        <Head />
-        <Face />
-        <Pants />
-        <Shirts />
+        <Legs />
         <Armor />
         <Footwear />
-        <Hair />
-        <Overwear />
+        <Head />
+        <Horns />
         <Gear />
-        <Weaponright />
-        <Weaponleft />
-        <Fingers />
-        <Headgear />
+        <Braces />
+        <Shoulderplates />
+        <Overwear />
+        <Thumbs />
+        <Lefthanditem />
+        <Righthanditem />
+        <Hands />
         <Foreground />
         <Base />
       </svg>
@@ -60,4 +56,4 @@ class WomanDwarf extends React.Component {
   }
 }
 
-export default WomanDwarf
+export default ManDragonborn
