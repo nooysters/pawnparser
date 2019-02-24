@@ -5,7 +5,7 @@
 const toPascal = (s) =>
 s.replace(/\w+/g, function(w){return w[0].toUpperCase() + w.slice(1).toLowerCase();});
 
-const mainIndex = (categories, name) => (`
+const mainIndex = (categories, name, opts) => (`
 import React from 'react'
 
 ${categories.map(category =>
@@ -26,7 +26,7 @@ class ${name} extends React.Component {
         version="1.1"
         ref={this.props.svgRef}
         x="0px" y="0px"
-        viewBox="0 0 114 152.8"
+        ${opts.viewBox}
       >
       ${categories.map(category =>
           `<${toPascal(category.key)} />`

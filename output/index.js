@@ -1,36 +1,27 @@
 import React from "react"
 
-import Base from "./base"
 import { Group as Shadow } from "./shadow"
-import { Group as Postbody } from "./postBody"
-import Equipped from "./equipped"
+import Background from "./background"
 import { Group as Body } from "./body"
-import { Group as Arms } from "./arms"
-import Pants from "./pants"
-import Shoes from "./shoes"
-import Shirts from "./shirts"
-import Vests from "./vests"
-import Armor from "./armor"
-import Robe from "./robe"
-import Gear from "./gear"
-import Gauntlets from "./gauntlets"
-import Shoulders from "./shoulders"
+import Undergarments from "./underGarments"
+import { Group as Hands } from "./hands"
 import { Group as Head } from "./head"
-import Nose from "./nose"
-import Eyes from "./eyes"
+import Face from "./face"
+import Pants from "./pants"
+import Shirts from "./shirts"
+import Armor from "./Armor"
+import Footwear from "./footwear"
 import Hair from "./hair"
-import Beard from "./beard"
-import Helm from "./helm"
-import Headwear from "./headWear"
-import Cloaks from "./cloaks"
-import { Group as Thumbs } from "./thumbs"
+import Overwear from "./overWear"
+import Gear from "./gear"
 import Weaponright from "./weaponRight"
 import Weaponleft from "./weaponLeft"
-import { Group as Hands } from "./hands"
-import Frontshield from "./frontShield"
-import Magic from "./magic"
+import { Group as Fingers } from "./fingers"
+import Headgear from "./headGear"
+import Foreground from "./foreGround"
+import Base from "./base"
 
-class ManDwarf extends React.Component {
+class WomanDwarf extends React.Component {
   constructor(props) {
     super(props)
   }
@@ -42,40 +33,31 @@ class ManDwarf extends React.Component {
         ref={this.props.svgRef}
         x="0px"
         y="0px"
-        viewBox="0 0 114 152.8"
+        viewBox="0 0 137.1000061 150.1999969"
       >
-        <Base />
         <Shadow />
-        <Postbody />
-        <Equipped />
+        <Background />
         <Body />
-        <Arms />
-        <Pants />
-        <Shoes />
-        <Shirts />
-        <Vests />
-        <Armor />
-        <Robe />
-        <Gear />
-        <Gauntlets />
-        <Shoulders />
+        <Undergarments />
+        <Hands />
         <Head />
-        <Nose />
-        <Eyes />
+        <Face />
+        <Pants />
+        <Shirts />
+        <Armor />
+        <Footwear />
         <Hair />
-        <Beard />
-        <Helm />
-        <Headwear />
-        <Cloaks />
-        <Thumbs />
+        <Overwear />
+        <Gear />
         <Weaponright />
         <Weaponleft />
-        <Hands />
-        <Frontshield />
-        <Magic />
+        <Fingers />
+        <Headgear />
+        <Foreground />
+        <Base />
       </svg>
     )
   }
 }
 
-export default ManDwarf
+export default WomanDwarf

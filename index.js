@@ -9,15 +9,19 @@ const svgComponentTemplate = require('./templates/svgComponentTemplate')
 const svgWithSkinColorTemplate = require('./templates/svgWithSkinColorTemplate')
 const shadowTemplate = require('./templates/shadowTemplate')
 
+const IN_FILE = process.env.FILE
+const CHARACTER = process.env.CHARACTER
 const DELIMITER = `_x24_`
-const SHADE_COLOR = `#21376C`
-// const SKIN_COLOR = `#E8B180`
+const SHADE_COLOR = process.env.SHADE_COLOR
+const SKIN_COLOR = process.env.SKIN_COLOR
+
+const VB_REGEX = /viewBox=\"{1}[\d\s\.]*\"{1}\s{1}/g
 
 const SVG2Json = (xmlData) => xotree.parseXML(xmlData)
 
-
 const parseOptions = (id_string) => {
-  const options = id_string.split(DELIMITER)
+  console.log(id_string)
+  const options = id_string && id_string.split(DELIMITER)
   const fileName = options.pop().replace(/_|\d/g, '')
 
   const subGroupId = options.reduce((level, o) => {
@@ -35,6 +39,7 @@ const parseOptions = (id_string) => {
     defaultEnabled: options.includes('D'),
     colorable: options.includes('C'),
     colors: [],
+    skinColor: SKIN_COLOR,
     subGroupId
   }
 
@@ -103,12 +108,12 @@ const saveFile = (filePath, data) => {
 
 const buildWithTemplate = (fc, svg, opts = {}) => {
   if(opts.hasSkinColor) {
-    return svgWithSkinColorTemplate(fc, svg)
+    return svgWithSkinColorTemplate(fc, svg, {...opts, character: CHARACTER })
   }
   if(opts.isShadow) {
-    return shadowTemplate(fc, svg)
+    return shadowTemplate(fc, svg, { ...opts, character: CHARACTER })
   }
-  return svgComponentTemplate(fc, svg, opts)
+  return svgComponentTemplate(fc, svg, { ...opts, character: CHARACTER })
 }
 
 const buildFile = (dir, fileData) => {
@@ -119,12 +124,12 @@ const buildFile = (dir, fileData) => {
 }
 
 const buildIndexFile = (dir, fileData) => {
-  const data = indexTemplate(fileData.files, fileData.key, fileData.options)
+  const data = indexTemplate(fileData.files, fileData.key, { ...fileData.options, character: CHARACTER })
   saveFile(`${dir}/index.js`, data)
 }
 
-const buildMainIndexFile = (categories, name) => {
-  const data = mainIndex(categories, name)
+const buildMainIndexFile = (categories, name, opts = {}) => {
+  const data = mainIndex(categories, name, opts)
   saveFile(`output/index.js`, data)
 }
 
@@ -132,7 +137,8 @@ if (!fs.existsSync('output')){
   fs.mkdirSync('output');
 }
 
-fs.readFile('pawn.svg', function(err, buf) {
+fs.readFile(IN_FILE, function(err, buf) {
+  const viewBox = buf.toString().match(VB_REGEX)[0]
   const json = SVG2Json(buf.toString())
   const svgParts = JSON2SVGParts(json).filter(a => a)
   const folderNames = []
@@ -149,6 +155,6 @@ fs.readFile('pawn.svg', function(err, buf) {
     buildIndexFile(dir, fileData)
   })
 
-  buildMainIndexFile(svgParts.map(f => f), 'ManDwarf')
+  buildMainIndexFile(svgParts.map(f => f), CHARACTER, { viewBox })
 })
 

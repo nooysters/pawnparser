@@ -13,7 +13,7 @@ const replaceColors = (svg, options) => {
   if (!options.colors) return svg
 
   return options.colors.reduce((svgOut, color, index) => {
-    const re = new RegExp(`\"${color}\"`,"g");
+    const re = new RegExp(`\"${color}\"`,"gi");
     return svgOut.replace(re, `{colors[${index}]}`)
   }, svg)
 }

@@ -5,7 +5,7 @@ import { uiSchemaService } from "../../uiSchema"
 import HeadBase from "./HeadBase"
 
 const CATEGORY = "head"
-
+const CHARACTER = "WomanDwarf"
 export const IDS = {
   HEAD_BASE: "HeadBase"
 }
@@ -23,11 +23,11 @@ export const Group = ({ props }) => (
   </g>
 )
 
-uiSchemaService.register(CATEGORY, [
+uiSchemaService.register(CHARACTER, CATEGORY, [
   {
     id: IDS.HEAD_BASE,
     name: "Head Base",
-    defaultColors: ["#E8B180"],
+    defaultColors: ["#E8B180", "#BE1E2D", "#SVGID_", "#FFFFFF"],
     colorable: false,
     component: components[IDS.HEAD_BASE],
     inUI: false,
@@ -36,4 +36,7 @@ uiSchemaService.register(CATEGORY, [
   }
 ])
 
-export default connectToBuilder(components, CATEGORY)
+export default connectToBuilder(components, {
+  character: CHARACTER,
+  category: CATEGORY
+})

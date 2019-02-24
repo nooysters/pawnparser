@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dwarf-female": "SKIN_COLOR=#E8B180 FILE=female_dwarf-2.svg CHARACTER=WomanDwarf SHADE_COLOR=#21376C node ."
   },
   "author": "jka",
   "license": "ISC",

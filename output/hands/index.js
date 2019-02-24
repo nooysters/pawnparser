@@ -2,19 +2,16 @@ import React from "react"
 import connectToBuilder from "../../builderConnector"
 import { uiSchemaService } from "../../uiSchema"
 
-import LeftHand from "./LeftHand"
-import RightHand from "./RightHand"
+import Hands from "./Hands"
 
 const CATEGORY = "hands"
-
+const CHARACTER = "WomanDwarf"
 export const IDS = {
-  LEFT_HAND: "LeftHand",
-  RIGHT_HAND: "RightHand"
+  HANDS: "Hands"
 }
 
 export const components = {
-  [IDS.LEFT_HAND]: LeftHand,
-  [IDS.RIGHT_HAND]: RightHand
+  [IDS.HANDS]: Hands
 }
 
 export const Group = ({ props }) => (
@@ -26,27 +23,20 @@ export const Group = ({ props }) => (
   </g>
 )
 
-uiSchemaService.register(CATEGORY, [
+uiSchemaService.register(CHARACTER, CATEGORY, [
   {
-    id: IDS.LEFT_HAND,
-    name: "Left Hand",
+    id: IDS.HANDS,
+    name: "Hands",
     defaultColors: ["#E8B180"],
     colorable: false,
-    component: components[IDS.LEFT_HAND],
-    inUI: false,
-    enabled: false,
-    subGroupId: 0
-  },
-  {
-    id: IDS.RIGHT_HAND,
-    name: "Right Hand",
-    defaultColors: ["#E8B180"],
-    colorable: false,
-    component: components[IDS.RIGHT_HAND],
+    component: components[IDS.HANDS],
     inUI: false,
     enabled: false,
     subGroupId: 0
   }
 ])
 
-export default connectToBuilder(components, CATEGORY)
+export default connectToBuilder(components, {
+  character: CHARACTER,
+  category: CATEGORY
+})

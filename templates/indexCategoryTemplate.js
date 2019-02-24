@@ -19,8 +19,8 @@ ${components.map(component =>
   `import ${component.componentName} from './${component.componentName}'`
 ).join('\n')}
 
-const CATEGORY = "${category}"
-
+const CATEGORY = '${category}'
+const CHARACTER = '${options.character}'
 export const IDS = {
   ${components.map(component =>
     `${toConstantCase(component.componentName)}: '${component.componentName}'`
@@ -42,7 +42,7 @@ export const Group = ({ props }) => <g id="${category}">
   }
 </g>
 
-uiSchemaService.register(CATEGORY, [
+uiSchemaService.register(CHARACTER, CATEGORY, [
   ${components.map(component =>
     `{
       id: IDS.${toConstantCase(component.componentName)},
@@ -57,7 +57,7 @@ uiSchemaService.register(CATEGORY, [
   ).join(',')}
 ])
 
-export default connectToBuilder(components, CATEGORY)
+export default connectToBuilder(components, { character: CHARACTER, category: CATEGORY })
 
 `)
 

@@ -9,18 +9,38 @@
  * @param {*} componentName
  * @param {*} svg
  */
-const svgWithSkinColorTemplate = (componentName, svg, options={}) => (`
+const replaceColors = (svg, options) => {
+  if (!options.colors) return svg
+
+  return options.colors.reduce((svgOut, color, index) => {
+    const re = new RegExp(`\"${color}\"`,"gi")
+    return svgOut.replace(re, `{colors[${index}]}`)
+  }, svg)
+}
+
+
+const color = (options) => options.colors ? options.colors.map(c => `'${c}'`).join(', ') : ''
+
+const svgWithSkinColorTemplate = (componentName, svg, opts={}) => {
+  const skinColorRegex = new RegExp(`\"${opts.skinColor}\"`, "gi")
+  return (
+
+`
 import React from 'react'
 import { withSkinColor } from "../../builderConnector"
 
-const ${componentName} = ({ skinColor, color = [] }) => {
+const ${componentName} = ({ skinColor, colors = [${color(opts)}] }) => {
+
   return (
-    ${svg.replace(/\"#E8B180\"/g, "{ skinColor }")}
+    ${replaceColors(svg.replace(skinColorRegex, "{ skinColor }"), opts)}
   )
 }
 
-export default withSkinColor(${componentName})
-`)
+export default withSkinColor(${componentName}, {character: '${opts.character}' })
+`
+)
+}
 
 module.exports = svgWithSkinColorTemplate
+
 

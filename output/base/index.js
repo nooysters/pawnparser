@@ -2,19 +2,19 @@ import React from "react"
 import connectToBuilder from "../../builderConnector"
 import { uiSchemaService } from "../../uiSchema"
 
-import Peg from "./Peg"
 import HalfCircle from "./HalfCircle"
+import Peg from "./Peg"
 
 const CATEGORY = "base"
-
+const CHARACTER = "WomanDwarf"
 export const IDS = {
-  PEG: "Peg",
-  HALF_CIRCLE: "HalfCircle"
+  HALF_CIRCLE: "HalfCircle",
+  PEG: "Peg"
 }
 
 export const components = {
-  [IDS.PEG]: Peg,
-  [IDS.HALF_CIRCLE]: HalfCircle
+  [IDS.HALF_CIRCLE]: HalfCircle,
+  [IDS.PEG]: Peg
 }
 
 export const Group = ({ props }) => (
@@ -26,17 +26,7 @@ export const Group = ({ props }) => (
   </g>
 )
 
-uiSchemaService.register(CATEGORY, [
-  {
-    id: IDS.PEG,
-    name: "Peg",
-    defaultColors: ["#3F3F40"],
-    colorable: false,
-    component: components[IDS.PEG],
-    inUI: true,
-    enabled: false,
-    subGroupId: 0
-  },
+uiSchemaService.register(CHARACTER, CATEGORY, [
   {
     id: IDS.HALF_CIRCLE,
     name: "Half Circle",
@@ -46,7 +36,20 @@ uiSchemaService.register(CATEGORY, [
     inUI: true,
     enabled: true,
     subGroupId: 0
+  },
+  {
+    id: IDS.PEG,
+    name: "Peg",
+    defaultColors: ["#3F3F40"],
+    colorable: false,
+    component: components[IDS.PEG],
+    inUI: true,
+    enabled: false,
+    subGroupId: 0
   }
 ])
 
-export default connectToBuilder(components, CATEGORY)
+export default connectToBuilder(components, {
+  character: CHARACTER,
+  category: CATEGORY
+})

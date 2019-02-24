@@ -9,7 +9,7 @@ const toPascal = (s) =>
  * @param {*} componentName
  * @param {*} svg
  */
-const shadowComponentTemplate = (componentName, svg) => (`
+const shadowComponentTemplate = (componentName, svg, opts) => (`
 import React from 'react'
 import { connectToAllEnabledElements } from '../../builderConnector'
 
@@ -20,7 +20,7 @@ const ${componentName} = ({ allEnabledElements }) => {
   )
 }
 
-export default connectToAllEnabledElements(${componentName})
+export default connectToAllEnabledElements(${componentName}, { character: '${opts.character}' })
 `)
 
 module.exports = shadowComponentTemplate
