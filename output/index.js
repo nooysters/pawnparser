@@ -3,23 +3,26 @@ import React from "react"
 import { Group as Shadow } from "./shadow"
 import Background from "./background"
 import { Group as Body } from "./body"
-import Legs from "./legs"
-import Armor from "./armor"
-import Footwear from "./footwear"
-import Head from "./head"
-import Horns from "./horns"
-import Gear from "./gear"
+import Pants from "./pants"
+import Shoes from "./shoes"
+import Shirts from "./shirts"
+import Coats from "./coats"
 import Braces from "./braces"
-import Shoulderplates from "./shoulderPlates"
-import Overwear from "./overwear"
-import Thumbs from "./thumbs"
+import Gear from "./gear"
+import Shoulders from "./shoulders"
+import { Group as Head } from "./head"
+import Face from "./face"
+import Hair from "./hair"
+import Cloaks from "./cloaks"
+import Headgear from "./headGear"
+import { Group as Thumbs } from "./thumbs"
 import Lefthanditem from "./leftHandItem"
 import Righthanditem from "./rightHandItem"
-import Hands from "./hands"
-import Foreground from "./foreGround"
+import { Group as Hands } from "./hands"
+import Foreground from "./foreground"
 import Base from "./base"
 
-class ManDragonborn extends React.Component {
+class ManGnome extends React.Component {
   constructor(props) {
     super(props)
   }
@@ -31,20 +34,23 @@ class ManDragonborn extends React.Component {
         ref={this.props.svgRef}
         x="0px"
         y="0px"
-        viewBox="0 0 137.1000061 150.1999969"
+        viewBox="0 0 95 152.8000031"
       >
         <Shadow />
         <Background />
         <Body />
-        <Legs />
-        <Armor />
-        <Footwear />
-        <Head />
-        <Horns />
-        <Gear />
+        <Pants />
+        <Shoes />
+        <Shirts />
+        <Coats />
         <Braces />
-        <Shoulderplates />
-        <Overwear />
+        <Gear />
+        <Shoulders />
+        <Head />
+        <Face />
+        <Hair />
+        <Cloaks />
+        <Headgear />
         <Thumbs />
         <Lefthanditem />
         <Righthanditem />
@@ -56,4 +62,4 @@ class ManDragonborn extends React.Component {
   }
 }
 
-export default ManDragonborn
+export default ManGnome

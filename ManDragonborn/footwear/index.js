@@ -2,20 +2,20 @@ import React from "react"
 import connectToBuilder from "../../builderConnector"
 import { uiSchemaService } from "../../uiSchema"
 
-import HeadBase from "./HeadBase"
+import SteelBoots from "./SteelBoots"
 
-const CATEGORY = "head"
-const CHARACTER = "ManGnome"
+const CATEGORY = "footwear"
+const CHARACTER = "ManDragonborn"
 export const IDS = {
-  HEAD_BASE: "HeadBase"
+  STEEL_BOOTS: "SteelBoots"
 }
 
 export const components = {
-  [IDS.HEAD_BASE]: HeadBase
+  [IDS.STEEL_BOOTS]: SteelBoots
 }
 
 export const Group = ({ props }) => (
-  <g id="head">
+  <g id="footwear">
     {Object.keys(components).map(key => {
       const Element = components[key]
       return <Element {...props} key={key} />
@@ -25,13 +25,13 @@ export const Group = ({ props }) => (
 
 uiSchemaService.register(CHARACTER, CATEGORY, [
   {
-    id: IDS.HEAD_BASE,
-    name: "Head Base",
-    defaultColors: ["#E7B080"],
-    colorable: false,
-    component: components[IDS.HEAD_BASE],
-    inUI: false,
-    enabled: true,
+    id: IDS.STEEL_BOOTS,
+    name: "Steel Boots",
+    defaultColors: ["#BBBDBF", "#21366C", "#FFFFFF", "#4F4845", "#D0D2D3"],
+    colorable: true,
+    component: components[IDS.STEEL_BOOTS],
+    inUI: true,
+    enabled: false,
     subGroupId: 0
   }
 ])

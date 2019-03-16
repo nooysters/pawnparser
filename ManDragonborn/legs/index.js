@@ -2,23 +2,23 @@ import React from "react"
 import connectToBuilder from "../../builderConnector"
 import { uiSchemaService } from "../../uiSchema"
 
-import Peg from "./Peg"
-import HalfCircle from "./HalfCircle"
+import Pants from "./Pants"
+import ThighArmor from "./ThighArmor"
 
-const CATEGORY = "base"
-const CHARACTER = "ManGnome"
+const CATEGORY = "legs"
+const CHARACTER = "ManDragonborn"
 export const IDS = {
-  PEG: "Peg",
-  HALF_CIRCLE: "HalfCircle"
+  PANTS: "Pants",
+  THIGH_ARMOR: "ThighArmor"
 }
 
 export const components = {
-  [IDS.PEG]: Peg,
-  [IDS.HALF_CIRCLE]: HalfCircle
+  [IDS.PANTS]: Pants,
+  [IDS.THIGH_ARMOR]: ThighArmor
 }
 
 export const Group = ({ props }) => (
-  <g id="base">
+  <g id="legs">
     {Object.keys(components).map(key => {
       const Element = components[key]
       return <Element {...props} key={key} />
@@ -28,24 +28,24 @@ export const Group = ({ props }) => (
 
 uiSchemaService.register(CHARACTER, CATEGORY, [
   {
-    id: IDS.PEG,
-    name: "Peg",
-    defaultColors: ["#3F3F40"],
-    colorable: false,
-    component: components[IDS.PEG],
+    id: IDS.PANTS,
+    name: "Pants",
+    defaultColors: ["#35312D"],
+    colorable: true,
+    component: components[IDS.PANTS],
     inUI: true,
     enabled: false,
-    subGroupId: 0
+    subGroupId: 1
   },
   {
-    id: IDS.HALF_CIRCLE,
-    name: "Half Circle",
-    defaultColors: [],
+    id: IDS.THIGH_ARMOR,
+    name: "Thigh Armor",
+    defaultColors: ["#9D9D9D", "#BBBDBF", "#FFFFFF"],
     colorable: false,
-    component: components[IDS.HALF_CIRCLE],
+    component: components[IDS.THIGH_ARMOR],
     inUI: true,
-    enabled: true,
-    subGroupId: 0
+    enabled: false,
+    subGroupId: 1
   }
 ])
 

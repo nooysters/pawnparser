@@ -1,0 +1,17 @@
+import React from "react"
+import { connectToAllEnabledElements } from "../../builderConnector"
+
+const BroadSwordR = ({ allEnabledElements }) => {
+  return allEnabledElements.includes("BroadSwordR") ? (
+    <g id="BroadSwordR">
+      <path
+        id="path_5_"
+        d="M40.9315834,68.1584167l1.7999992-1.3000031l2.9000015-5.9999962 c0,0-0.0999985-2.2999992-0.2000008-4.7000008l2.7999992-3.7000008l0.2000008-1.9000015l-2.5-3.2000008L45.1315842-8.74158 l-0.0999985-1.3000002l-1.0000038-4.3000002l-0.9000015-2.3000002l-0.5-0.7999992l-12-0.1000004 c-0.5,0.7999992-3.2000008,5.0999994-3.5999985,9.499999c-0.0999985,0.6999998-0.2000008,1.6999998,0.0999985,17.3999996 c0.2000008,12.4000006,0.5,28.7000046,0.7000008,37.2000046l-3.6999989,4.0999985l-0.1000004,2.0999985l4.2000008,4.4000015 l-0.0999985,4.5l4.4000015,6.6999931l1.5,0.5999985L40.9315834,68.1584167z"
+      />
+    </g>
+  ) : null
+}
+
+export default connectToAllEnabledElements(BroadSwordR, {
+  character: "ManDragonborn"
+})
